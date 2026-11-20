@@ -90,9 +90,10 @@ main{flex:1;min-height:0;position:relative}
 #legend{font-size:10.5px;color:var(--muted);display:flex;align-items:center;gap:5px;font-weight:600;flex:none}
 #legend i{display:block;width:46px;height:7px;border-radius:5px;background:linear-gradient(90deg,var(--alt0),var(--alt1))}
 #count{font-size:11.5px;font-weight:800;color:var(--text);padding:5px 10px;border-radius:999px;background:var(--panel);border:1px solid var(--line);white-space:nowrap;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);margin-left:auto}
-#hud{position:absolute;left:50%;top:82px;transform:translateX(-50%);display:none;align-items:center;gap:9px;padding:5px 15px 5px 7px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);z-index:4;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.28);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);white-space:nowrap;color:var(--text)}
+#hud{position:absolute;right:12px;bottom:52px;transform-origin:100% 100%;display:none;align-items:center;gap:9px;padding:5px 15px 5px 7px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);z-index:4;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.28);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);white-space:nowrap;color:var(--text)}
 #hud.on{display:flex;animation:hudIn .4s cubic-bezier(.2,1.4,.4,1)}
-@keyframes hudIn{from{opacity:0;transform:translateX(-50%) scale(.8)}}
+@keyframes hudIn{from{opacity:0;transform:translateY(10px) scale(.85)}}
+#radarWrap.cmp #wxPop{bottom:112px}
 #hud svg{width:40px;height:40px;flex:none}
 #hud b{font-size:19px;font-weight:900;line-height:1.05;display:block}
 #hud small{display:block;font-size:11px;font-weight:700;color:var(--muted);margin-top:1px}
@@ -401,7 +402,7 @@ const THEMES=[
 let TH=THEMES[0];
 const cssv=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 let COL={};
-function tabColor(){                       // tab bar color as a solid (opaque) color, so the iOS bottom strip can match it exactly
+function tabColor(){                       // tab bar color as a solid color, so the iOS bottom strip can match it exactly
   try{const m=cssv('--panel2').match(/[\d.]+/g).map(Number),bg=hex2rgb(cssv('--bg2')),a=m.length>3?m[3]:1;
     const c=[0,1,2].map(i=>Math.round(m[i]*a+bg[i]*(1-a)));document.documentElement.style.setProperty('--tabbg',`rgb(${c[0]},${c[1]},${c[2]})`)}catch(e){}
 }
@@ -883,7 +884,7 @@ const CMP={on:false,starting:false,hd:null,disp:null,tilt:null,acc:null,lastEv:0
      this.h=e=>this.onEv(e);
      addEventListener('deviceorientationabsolute',this.h,true);addEventListener('deviceorientation',this.h,true);
      this.on=true;this.hd=null;this.disp=null;this.tilt=null;this.lastEv=0;this.sector=-1;this.ctr=new Set();
-     $('#compassBtn').classList.add('on');$('#hud').classList.add('on');updateHud();Snd.chime();
+     $('#compassBtn').classList.add('on');$('#hud').classList.add('on');$('#radarWrap').classList.add('cmp');updateHud();Snd.chime();
      toast('🧭 Compass on! The radar now turns with you',3400);
      clearTimeout(this.wt);this.wt=setTimeout(()=>{if(this.on&&this.hd==null)toast('🧭 No compass data yet. Hold the phone up and wave it in a figure 8',5200)},3200);
    }finally{this.starting=false}
@@ -891,7 +892,7 @@ const CMP={on:false,starting:false,hd:null,disp:null,tilt:null,acc:null,lastEv:0
  stop(quiet){
    if(!this.on)return;removeEventListener('deviceorientationabsolute',this.h,true);removeEventListener('deviceorientation',this.h,true);
    this.on=false;this.hd=null;this.disp=null;clearTimeout(this.wt);
-   $('#compassBtn').classList.remove('on');$('#hud').classList.remove('on');if(!quiet){Snd.tick();toast('🧭 Compass off: north is up again',2200)}
+   $('#compassBtn').classList.remove('on');$('#hud').classList.remove('on');$('#radarWrap').classList.remove('cmp');if(!quiet){Snd.tick();toast('🧭 Compass off: north is up again',2200)}
    if(sheetOpen)updateLook();
  },
  onEv(e){
