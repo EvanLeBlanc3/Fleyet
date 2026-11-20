@@ -1,6 +1,6 @@
 // Fleyet service worker: caches the app shell so it opens offline.
-// Live flight data is NEVER cached (always fresh from the network).
-const CACHE = 'fleyet-v1';
+// Live flight, weather and photo data are NEVER cached here (always fresh from the network).
+const CACHE = 'fleyet-v3';
 const SHELL = ['./', './index.html', './manifest.webmanifest',
   './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
 
@@ -16,9 +16,9 @@ self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
-  if (url.origin !== location.origin) return;          // APIs, photos: go straight to network
+  if (url.origin !== location.origin) return;
   e.respondWith(
-    fetch(req).then(res => {                           // network-first so updates land quickly
+    fetch(req).then(res => {
       const copy = res.clone();
       caches.open(CACHE).then(c => c.put(req, copy)).catch(() => {});
       return res;

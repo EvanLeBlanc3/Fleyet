@@ -15,13 +15,13 @@
 <link rel="icon" type="image/png" href="icons/icon-192.png">
 <style>
 /* ───────── THEMES ───────── */
-[data-theme="clear"]{--bg1:#5db8ff;--bg2:#e4f5ff;--text:#0d2540;--muted:#4a6a8c;--panel:rgba(255,255,255,.66);--panel2:rgba(255,255,255,.85);--line:rgba(13,37,64,.14);--accent:#1677ff;--accent-ink:#fff;--accent2:#ff7a29;--alt0:#ff7a29;--alt1:#1677ff;--ground:rgba(255,255,255,.42);--ring:rgba(13,37,64,.34);--sweep:#1677ff;--meta:#5db8ff}
+[data-theme="clear"]{--bg1:#4aa8f5;--bg2:#d9f0ff;--text:#0d2540;--muted:#4a6a8c;--panel:rgba(255,255,255,.62);--panel2:rgba(255,255,255,.88);--line:rgba(13,37,64,.14);--accent:#1677ff;--accent-ink:#fff;--accent2:#ff7a29;--alt0:#ff7a29;--alt1:#1677ff;--ground:rgba(255,255,255,.42);--ring:rgba(13,37,64,.34);--sweep:#1677ff;--meta:#4aa8f5}
 [data-theme="night"]{--bg1:#03180d;--bg2:#000604;--text:#c9ffe0;--muted:#5fae85;--panel:rgba(8,44,26,.62);--panel2:rgba(6,36,21,.92);--line:rgba(57,255,136,.2);--accent:#39ff88;--accent-ink:#00210f;--accent2:#ffd84a;--alt0:#ffd84a;--alt1:#39ff88;--ground:rgba(12,70,36,.32);--ring:rgba(57,255,136,.5);--sweep:#39ff88;--meta:#03180d}
-[data-theme="golden"]{--bg1:#ffb36b;--bg2:#5b2a7a;--text:#fff6e8;--muted:#ffd9b8;--panel:rgba(62,22,74,.45);--panel2:rgba(62,22,74,.92);--line:rgba(255,230,200,.22);--accent:#ffd166;--accent-ink:#3a1c00;--accent2:#ff5d8f;--alt0:#ff5d8f;--alt1:#ffe27a;--ground:rgba(255,255,255,.12);--ring:rgba(255,230,200,.55);--sweep:#ffd166;--meta:#ffb36b}
+[data-theme="golden"]{--bg1:#ffa66a;--bg2:#5b2a7a;--text:#fff6e8;--muted:#ffd9b8;--panel:rgba(62,22,74,.45);--panel2:rgba(62,22,74,.92);--line:rgba(255,230,200,.22);--accent:#ffd166;--accent-ink:#3a1c00;--accent2:#ff5d8f;--alt0:#ff5d8f;--alt1:#ffe27a;--ground:rgba(255,255,255,.12);--ring:rgba(255,230,200,.55);--sweep:#ffd166;--meta:#ffa66a}
 [data-theme="arcade"]{--bg1:#220545;--bg2:#05010f;--text:#f6e9ff;--muted:#a68bd6;--panel:rgba(48,12,92,.58);--panel2:rgba(34,8,70,.94);--line:rgba(255,47,208,.3);--accent:#ff2fd0;--accent-ink:#fff;--accent2:#19e6ff;--alt0:#ff2fd0;--alt1:#19e6ff;--ground:rgba(60,10,110,.35);--ring:rgba(25,230,255,.6);--sweep:#ff2fd0;--meta:#220545}
 [data-theme="cozy"]{--bg1:#46301c;--bg2:#160d07;--text:#ffeed8;--muted:#cba983;--panel:rgba(90,56,30,.55);--panel2:rgba(60,38,20,.94);--line:rgba(255,200,130,.22);--accent:#ffb347;--accent-ink:#2b1500;--accent2:#ff7a59;--alt0:#ff7a59;--alt1:#ffd98a;--ground:rgba(255,200,130,.1);--ring:rgba(255,200,130,.45);--sweep:#ffb347;--meta:#46301c}
 [data-theme="blueprint"]{--bg1:#0f4f96;--bg2:#06284f;--text:#eaf5ff;--muted:#a4c8ec;--panel:rgba(255,255,255,.09);--panel2:rgba(6,40,79,.95);--line:rgba(255,255,255,.28);--accent:#ffffff;--accent-ink:#06284f;--accent2:#7fd0ff;--alt0:#7fd0ff;--alt1:#ffffff;--ground:rgba(255,255,255,.06);--ring:rgba(255,255,255,.6);--sweep:#ffffff;--meta:#0f4f96}
-[data-theme="storm"]{--bg1:#41536a;--bg2:#0e141c;--text:#e8f0fa;--muted:#9fb2c8;--panel:rgba(20,30,44,.58);--panel2:rgba(16,24,36,.94);--line:rgba(159,178,200,.22);--accent:#7fb3ff;--accent-ink:#06142a;--accent2:#ffd34d;--alt0:#ffd34d;--alt1:#7fb3ff;--ground:rgba(159,178,200,.1);--ring:rgba(159,178,200,.5);--sweep:#7fb3ff;--meta:#41536a}
+[data-theme="storm"]{--bg1:#3a4b61;--bg2:#0b1119;--text:#e8f0fa;--muted:#9fb2c8;--panel:rgba(20,30,44,.58);--panel2:rgba(16,24,36,.94);--line:rgba(159,178,200,.22);--accent:#7fb3ff;--accent-ink:#06142a;--accent2:#ffd34d;--alt0:#ffd34d;--alt1:#7fb3ff;--ground:rgba(159,178,200,.1);--ring:rgba(159,178,200,.5);--sweep:#7fb3ff;--meta:#3a4b61}
 [data-theme="spooky"]{--bg1:#341248;--bg2:#08030d;--text:#ffe9d2;--muted:#b99ad6;--panel:rgba(48,18,64,.62);--panel2:rgba(34,12,46,.95);--line:rgba(255,122,26,.28);--accent:#ff7a1a;--accent-ink:#1a0900;--accent2:#9b5cff;--alt0:#9b5cff;--alt1:#ff9a3d;--ground:rgba(155,92,255,.1);--ring:rgba(255,122,26,.55);--sweep:#ff7a1a;--meta:#341248}
 
 /* ───────── BASE ───────── */
@@ -85,9 +85,38 @@ main{flex:1;min-height:0;position:relative}
 #rSide{top:6px;right:12px;flex-direction:column;gap:8px}
 #rSide .ibtn{width:40px;height:40px}#rSide .ibtn svg{width:20px;height:20px}
 .ibtn.on{background:var(--accent);color:var(--accent-ink);border-color:transparent}
-#legend{position:absolute;left:12px;bottom:6px;font-size:10.5px;color:var(--muted);display:flex;align-items:center;gap:6px;font-weight:600}
-#legend i{display:block;width:70px;height:7px;border-radius:5px;background:linear-gradient(90deg,var(--alt0),var(--alt1))}
-#count{position:absolute;right:12px;bottom:6px;font-size:11.5px;font-weight:800;color:var(--text);padding:4px 10px;border-radius:999px;background:var(--panel);border:1px solid var(--line)}
+#bRow{position:absolute;left:12px;right:12px;bottom:6px;display:flex;align-items:center;justify-content:space-between;gap:8px;pointer-events:none}
+#bRow>*{pointer-events:auto}
+#legend{font-size:10.5px;color:var(--muted);display:flex;align-items:center;gap:5px;font-weight:600;flex:none}
+#legend i{display:block;width:46px;height:7px;border-radius:5px;background:linear-gradient(90deg,var(--alt0),var(--alt1))}
+#count{font-size:11.5px;font-weight:800;color:var(--text);padding:5px 10px;border-radius:999px;background:var(--panel);border:1px solid var(--line);white-space:nowrap;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);margin-left:auto}
+#wxChip{display:none;align-items:center;gap:2px;padding:2px 11px 2px 4px;border-radius:999px;background:var(--panel);border:1px solid var(--line);font-weight:800;font-size:15px;color:var(--text);flex:none;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:transform .15s}
+#wxChip.on{display:inline-flex}
+#wxChip:active{transform:scale(.92)}
+#wxChip svg{width:32px;height:32px}
+#wxPop{position:absolute;right:12px;bottom:52px;width:264px;padding:14px;border-radius:22px;background:var(--panel2);border:1px solid var(--line);box-shadow:0 18px 50px rgba(0,0,0,.4);z-index:6;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);display:none;transform-origin:100% 100%}
+#wxPop.on{display:block;animation:wxIn .32s cubic-bezier(.2,1.4,.4,1)}
+@keyframes wxIn{from{opacity:0;transform:scale(.8) translateY(10px)}}
+.wxTop{display:flex;align-items:center;gap:10px}
+.wxTop svg{width:62px;height:62px;flex:none}
+.wxTop b{font-size:34px;font-weight:900;line-height:1;display:block}
+.wxTop span{font-size:13px;color:var(--muted);font-weight:600;display:block;margin-top:3px;line-height:1.25}
+.wxVerdict{margin:10px 0 8px;padding:8px 10px;border-radius:12px;background:var(--accent);color:var(--accent-ink);font-weight:800;font-size:13px;text-align:center}
+.wxGrid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.wxGrid div{padding:7px 9px;border-radius:12px;background:rgba(127,127,127,.14)}
+.wxGrid i{display:block;font-style:normal;font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);font-weight:700}
+.wxGrid b{display:block;font-size:14px;margin-top:1px;font-weight:800;white-space:nowrap}
+.wxFoot{font-size:10.5px;color:var(--muted);text-align:center;margin-top:8px}
+/* weather icon animation */
+svg.wxi{overflow:visible}
+.wx-rays{transform-origin:24px 24px;animation:wxr 16s linear infinite}@keyframes wxr{to{transform:rotate(360deg)}}
+.wx-drift{animation:wxdr 6s ease-in-out infinite alternate}.wx-drift2{animation:wxdr 8s ease-in-out infinite alternate-reverse}@keyframes wxdr{from{transform:translateX(-1.5px)}to{transform:translateX(1.5px)}}
+.wx-d{animation:wxdrop .9s linear infinite}@keyframes wxdrop{0%{transform:translateY(-3px);opacity:0}25%{opacity:1}100%{transform:translateY(6px);opacity:0}}
+.wx-s{animation:wxsn 2s linear infinite}@keyframes wxsn{0%{transform:translateY(-3px);opacity:0}25%{opacity:1}100%{transform:translateY(7px);opacity:0}}
+.wx-bolt{animation:wxb 2.4s infinite}@keyframes wxb{0%,60%,100%{opacity:1}64%{opacity:.25}68%{opacity:1}72%{opacity:.3}}
+.wx-tw{animation:wxt 2.5s ease-in-out infinite}@keyframes wxt{50%{opacity:.25}}
+.wx-fog{animation:wxdr 4s ease-in-out infinite alternate}
+
 #cards{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding:8px 14px 10px;scrollbar-width:none;flex:none}
 #cards::-webkit-scrollbar{display:none}
 .card{flex:none;scroll-snap-align:center;width:156px;padding:10px 12px;border-radius:18px;background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);text-align:left;transition:transform .2s,border-color .2s,box-shadow .2s;position:relative}
@@ -97,8 +126,6 @@ main{flex:1;min-height:0;position:relative}
 .card .cs svg{width:16px;height:16px;flex:none}
 .card .rt{font-size:12.5px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .card .mt{font-size:12px;margin-top:6px;font-weight:600;display:flex;justify-content:space-between}
-.card .more{position:absolute;right:12px;top:-9px;font-size:10px;font-weight:800;color:var(--accent-ink);background:var(--accent);border-radius:8px;padding:2px 6px;display:none}
-.card.sel .more{display:block}
 .emptyCard{width:100%;text-align:center;color:var(--muted);font-size:13.5px;padding:14px}
 
 /* overlay banners inside radar */
@@ -137,10 +164,9 @@ main{flex:1;min-height:0;position:relative}
 .tcard{border-radius:20px;padding:12px;height:122px;position:relative;overflow:hidden;text-align:left;border:2px solid var(--line);background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--text);transition:transform .2s,border-color .2s}
 .tcard:active{transform:scale(.95)}
 .tcard.on{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent)}
-.tcard b{font-size:15px;display:block;position:relative;z-index:2}.tcard span{font-size:11.5px;color:var(--muted);position:relative;z-index:2}
+.tcard b{font-size:15px;display:block;position:relative;z-index:2}.tcard span{font-size:11.5px;color:var(--muted);position:relative;z-index:2;display:block;max-width:62%;line-height:1.25;margin-top:2px}
 .tcard .mini{position:absolute;right:4px;bottom:2px;width:64px;height:64px;opacity:.95}
-.tcard span{display:block;max-width:62%;line-height:1.25;margin-top:2px}
-.tcard .tick{position:absolute;top:10px;right:10px;width:22px;height:22px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:none;place-items:center;font-size:13px;font-weight:900;z-index:3}
+.tcard .tick{position:absolute;top:10px;right:10px;width:22px;height:22px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:none;place-items:center;font-size:13px;font-weight:900;z-index:3;max-width:none;margin:0}
 .tcard.on .tick{display:grid}
 
 /* settings */
@@ -175,12 +201,32 @@ select,input[type=text],input[type=url]{width:100%;padding:10px 12px;border-radi
 /* sheet */
 #backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .3s;z-index:20}
 #backdrop.on{opacity:1;pointer-events:auto}
-#sheet{position:absolute;left:0;right:0;bottom:0;max-height:90%;background:var(--panel2);border-radius:28px 28px 0 0;border:1px solid var(--line);border-bottom:0;z-index:21;transform:translateY(105%);transition:transform .42s cubic-bezier(.2,.9,.3,1);display:flex;flex-direction:column;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 -20px 60px rgba(0,0,0,.4)}
+#sheet{position:absolute;left:0;right:0;bottom:0;max-height:92%;background:var(--panel2);border-radius:28px 28px 0 0;border:1px solid var(--line);border-bottom:0;z-index:21;transform:translateY(105%);transition:transform .42s cubic-bezier(.2,.9,.3,1);display:flex;flex-direction:column;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 -20px 60px rgba(0,0,0,.4)}
 #sheet.on{transform:none}
 #sheet .grab{width:46px;height:5px;border-radius:9px;background:var(--line);margin:9px auto 4px;flex:none;touch-action:none}
 #sheetBody{overflow-y:auto;-webkit-overflow-scrolling:touch;padding:4px 18px max(calc(var(--sb) + 10px),22px)}
 #closeX{position:absolute;right:14px;top:12px;width:34px;height:34px;border-radius:50%;background:var(--panel);border:1px solid var(--line);display:grid;place-items:center;z-index:3}
 #closeX svg{width:16px;height:16px}
+/* aircraft photo */
+#sPhoto{position:relative;margin:2px 0 4px;border-radius:20px;overflow:hidden;aspect-ratio:3/2;background:rgba(127,127,127,.16);border:1px solid var(--line);transition:opacity .4s}
+#sPhoto.none{display:none}
+#sPhoto .bgi{position:absolute;inset:-14px;width:calc(100% + 28px);height:calc(100% + 28px);object-fit:cover;filter:blur(18px) saturate(1.2) brightness(.85);opacity:0;transition:opacity .5s}
+#sPhoto .fgi{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transform:scale(1.03);transition:opacity .55s ease,transform .7s ease;image-rendering:auto}
+#sPhoto.ready .bgi,#sPhoto.ready .fgi{opacity:1}
+#sPhoto.ready .fgi{transform:none}
+#sPhoto .credit{position:absolute;left:8px;bottom:8px;max-width:calc(100% - 16px);font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:99px;background:rgba(0,0,0,.58);color:#fff;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:0;transition:opacity .5s .3s;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+#sPhoto.ready .credit{opacity:1}
+#sPhoto .zoom{position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.58);color:#fff;display:grid;place-items:center;opacity:0;transition:opacity .5s .3s}
+#sPhoto.ready .zoom{opacity:1}
+#sPhoto .zoom svg{width:16px;height:16px}
+#sPhoto .phload{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--muted);font-weight:700;font-size:13px}
+#sPhoto .phload svg{width:46px;height:46px;animation:wob 2.4s ease-in-out infinite}
+#sPhoto .sk{position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.3) 50%,transparent 70%);background-size:220% 100%;animation:shim 1.3s linear infinite}
+@keyframes shim{from{background-position:120% 0}to{background-position:-120% 0}}
+#lb{position:absolute;inset:0;z-index:80;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:calc(var(--st) + 20px) 10px 30px}
+#lb.on{display:flex;animation:viewIn .25s ease}
+#lb img{max-width:100%;max-height:82%;object-fit:contain;border-radius:10px}
+#lb span{color:#fff;font-size:12px;font-weight:600;opacity:.85}
 .hero{display:flex;gap:10px;align-items:stretch;margin-top:4px}
 .hero .info{flex:1;min-width:0;padding-top:6px}
 .hero .cs{font-size:30px;font-weight:900;letter-spacing:.5px;line-height:1.05}
@@ -191,9 +237,6 @@ select,input[type=text],input[type=url]{width:100%;padding:10px 12px;border-radi
 .turn{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(58deg) rotateZ(var(--rz,0deg))}
 .turn svg{position:absolute;left:25px;top:25px;width:100px;height:100px;overflow:visible}
 .disc{position:absolute;left:5px;top:5px;width:140px;height:140px;border-radius:50%;border:2px dashed var(--ring);transform:rotateX(58deg);opacity:.7}
-.photo{width:100%;height:92px;border-radius:14px;object-fit:cover;margin-top:12px;background:rgba(127,127,127,.2);display:none}
-.photo.on{display:block;animation:pop2 .5s ease}
-@keyframes pop2{from{opacity:0;transform:scale(.96)}}
 .route{margin-top:14px;padding:14px;border-radius:18px;background:var(--panel);border:1px solid var(--line)}
 .route .ends{display:flex;justify-content:space-between;align-items:flex-end}
 .route .ap{max-width:42%}.route .ap.r{text-align:right}
@@ -266,8 +309,12 @@ select,input[type=text],input[type=url]{width:100%;padding:10px 12px;border-radi
           <button class="ibtn" id="northBtn" aria-label="North up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l5 17-5-4-5 4z"/></svg></button>
           <button class="ibtn" id="tiltBtn" aria-label="Tilt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15l9-9 9 9"/><path d="M3 20h18"/></svg></button>
         </div>
-        <div id="legend">low <i></i> high</div>
-        <div id="count"></div>
+        <div id="bRow">
+          <div id="legend">low <i></i> high</div>
+          <div id="count"></div>
+          <button id="wxChip" aria-label="Weather"></button>
+        </div>
+        <div id="wxPop"></div>
         <div class="banner" id="banner"></div>
       </div>
       <div id="cards"></div>
@@ -293,6 +340,7 @@ select,input[type=text],input[type=url]{width:100%;padding:10px 12px;border-radi
 
   <div id="backdrop"></div>
   <div id="sheet"><div class="grab" id="grab"></div><button id="closeX" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button><div id="sheetBody"></div></div>
+  <div id="lb"><img alt=""><span></span></div>
   <div id="toasts"></div>
 
   <div id="splash">
@@ -323,18 +371,18 @@ const flag=iso=>iso&&iso.length===2?String.fromCodePoint(...[...iso.toUpperCase(
 /* ════════════════════════════════════════════════
    SETTINGS & THEMES
 ════════════════════════════════════════════════ */
-const DEF={theme:'clear',units:'aviation',radius:25,interval:30,sound:true,vol:.7,source:'auto',proxy:'',ground:false,alerts:true,orbit:true,flip:false,loc:'gps',lastLoc:null};
+const DEF={theme:'clear',units:'aviation',temp:'f',wx:true,radius:25,interval:30,sound:true,vol:.7,source:'auto',proxy:'',ground:false,alerts:true,orbit:true,flip:false,loc:'gps',lastLoc:null};
 const S=Object.assign({},DEF,LS.get('fleyet.settings',{}));
 const save=()=>LS.set('fleyet.settings',S);
 
 const THEMES=[
- {id:'clear',name:'Clear Skies',emoji:'☀️',desc:'Sunny & breezy',fx:'clouds',wave:'sine',pitch:1,meta:'#5db8ff'},
+ {id:'clear',name:'Clear Skies',emoji:'☀️',desc:'Sunny & breezy',fx:'clouds',wave:'sine',pitch:1,meta:'#4aa8f5'},
  {id:'night',name:'Night Radar',emoji:'📡',desc:'Green phosphor glow',fx:'stars',wave:'triangle',pitch:.9,meta:'#03180d'},
- {id:'golden',name:'Golden Hour',emoji:'🌅',desc:'Sunset cruise',fx:'clouds',wave:'sine',pitch:1.1,meta:'#ffb36b'},
+ {id:'golden',name:'Golden Hour',emoji:'🌅',desc:'Sunset cruise',fx:'clouds',wave:'sine',pitch:1.1,meta:'#ffa66a'},
  {id:'arcade',name:'Neon Arcade',emoji:'🕹️',desc:'8-bit & synthwave',fx:'grid',wave:'square',pitch:1.25,meta:'#220545'},
  {id:'cozy',name:'Cozy Cabin',emoji:'🔥',desc:'Fireflies & mellow tones',fx:'fireflies',wave:'triangle',pitch:.8,meta:'#46301c'},
  {id:'blueprint',name:'Blueprint',emoji:'📐',desc:'Draftsman precision',fx:'none',wave:'sine',pitch:1.3,meta:'#0f4f96'},
- {id:'storm',name:'Storm Front',emoji:'⛈️',desc:'Rain, thunder, drama',fx:'rain',wave:'triangle',pitch:.7,meta:'#41536a'},
+ {id:'storm',name:'Storm Front',emoji:'⛈️',desc:'Rain, thunder, drama',fx:'rain',wave:'triangle',pitch:.7,meta:'#3a4b61'},
  {id:'spooky',name:'Spooky Skies',emoji:'🦇',desc:'Embers & bats',fx:'embers',wave:'sawtooth',pitch:.62,meta:'#341248'},
 ];
 let TH=THEMES[0];
@@ -398,6 +446,7 @@ const UN={
  spd(kt){if(kt==null)return '—';return S.units==='aviation'?fmtN(kt)+' kt':S.units==='us'?fmtN(kt*1.15078)+' mph':fmtN(kt*1.852)+' km/h'},
  dist(nm){if(nm==null)return '—';const v=S.units==='aviation'?nm:S.units==='us'?nm*1.15078:nm*1.852;return (v<10?v.toFixed(1):fmtN(v))+(S.units==='aviation'?' nm':S.units==='us'?' mi':' km')},
  vs(fpm){if(fpm==null)return '—';if(Math.abs(fpm)<64)return 'Level';const v=S.units==='metric'?fpm*.00508:fpm;return (fpm>0?'▲ ':'▼ ')+(S.units==='metric'?Math.abs(v).toFixed(1)+' m/s':fmtN(Math.abs(v))+' ft/min')},
+ temp(c){if(c==null)return '—';return Math.round(S.temp==='f'?c*9/5+32:c)+'°'},
 };
 
 /* ════════════════════════════════════════════════
@@ -431,25 +480,140 @@ const Snd={ctx:null,master:null,nb:null,
 };
 
 /* ════════════════════════════════════════════════
+   REALISTIC CLOUDS: procedural, lit & self-shadowed sprites
+════════════════════════════════════════════════ */
+function rnd(seed){let s=(seed>>>0)||1;return()=>{s=(Math.imul(s,1664525)+1013904223)>>>0;return s/4294967296}}
+function mkNoise(seed){const r=rnd(seed),v=new Float32Array(256),p=new Uint8Array(512);const perm=[];for(let i=0;i<256;i++){v[i]=r();perm.push(i)}
+  for(let i=255;i>0;i--){const j=Math.floor(r()*(i+1));[perm[i],perm[j]]=[perm[j],perm[i]]}for(let i=0;i<512;i++)p[i]=perm[i&255];
+  return(x,y)=>{const xi=Math.floor(x),yi=Math.floor(y),xf=x-xi,yf=y-yi,X=xi&255,Y=yi&255,a=v[p[p[X]+Y]],b=v[p[p[X+1]+Y]],c=v[p[p[X]+Y+1]],d=v[p[p[X+1]+Y+1]],u=xf*xf*(3-2*xf),w=yf*yf*(3-2*yf);return a+(b-a)*u+(c-a)*w+(a-b-c+d)*u*w}}
+const ss=(a,b,x)=>{const t=Math.min(1,Math.max(0,(x-a)/(b-a)));return t*t*(3-2*t)};
+const CLOUD_PAL={
+ day:{hi:[255,255,255],lo:[190,206,232],deep:[128,150,188],amb:.42},
+ golden:{hi:[255,242,218],lo:[240,170,166],deep:[140,86,130],amb:.42},
+ storm:{hi:[176,187,203],lo:[110,123,142],deep:[44,52,66],amb:.38}};
+// type: cumulus | strato | cirrus
+function makeCloud(type,pal,seed){
+  const r=rnd(seed),n1=mkNoise(seed*7+1),n2=mkNoise(seed*13+5),n3=mkNoise(seed*29+9);
+  const W=type==='cirrus'?360:300,H=type==='cirrus'?90:type==='strato'?96:176;
+  const cv=document.createElement('canvas');cv.width=W;cv.height=H;const c=cv.getContext('2d'),img=c.createImageData(W,H),D=new Float32Array(W*H);
+  const fbm=(x,y,o)=>{let s=0,a=.5,f=1,t=0;for(let i=0;i<o;i++){s+=a*n1(x*f,y*f);t+=a;a*=.5;f*=2.07}return s/t};
+  const rfb=(x,y)=>{let s=0,a=.5,f=1,t=0;for(let i=0;i<4;i++){const q=n2(x*f+31,y*f+17);s+=a*(1-Math.abs(2*q-1));t+=a;a*=.55;f*=2.2}return s/t};
+  const base=type==='cumulus'?H*.84:H*.66;
+  // skyline profile: a few towers
+  const bumps=[],nb=type==='cumulus'?5+Math.floor(r()*4):5+Math.floor(r()*3);
+  for(let i=0;i<nb;i++)bumps.push({c:.18+.64*r(),w:(type==='cumulus'?.06:.07)+r()*.09,a:(type==='cumulus'?.3:.1)+r()*(type==='cumulus'?.7:.16)});
+  const env=u=>Math.pow(Math.max(0,1-Math.pow((u-.5)/.5,2)),type==='cumulus'?.5:.35);
+  const prof=u0=>{const u=(u0-.07)/.86;let s=0;for(const b of bumps){const t=(u-b.c)/(b.w*1.9);const h=b.a*Math.sqrt(Math.max(0,1-t*t));if(h>s)s=h}return Math.min(1,.28+s)*env(u)};
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++){
+    let d;
+    if(type==='cirrus'){
+      const s=n1(x*.006,y*.05)*.6+n2(x*.016,y*.11)*.4,m=ss(0,.2,x/W)*ss(1,.8,x/W)*Math.exp(-Math.pow((y/H-.5)/.32,2));
+      d=Math.max(0,(s-.42)*2.6)*m*.7;
+    }else{
+      const wx=(n2(x*.011,y*.011)-.5)*(type==='cumulus'?30:14),wy=(n3(x*.011+9,y*.011)-.5)*(type==='cumulus'?24:10),xx=x+wx,yy=y+wy;
+      const top=base-prof(xx/W)*(base-8)*(type==='cumulus'?1:.9)-(type==='cumulus'?10:16),
+        d0=Math.min(1,Math.max(0,(yy-top)/(type==='cumulus'?26:20)));
+      const k1=type==='cumulus'?.027:.04,k2=type==='cumulus'?.027:.05,
+        b=fbm(xx*k1,yy*k2,6)*.55+rfb(xx*k1*1.15,yy*k2*1.15)*.45,
+        fine=n3(x*.11,y*.11),m=d0;
+      d=Math.min(1,Math.max(0,(b*1.0+m*(type==='cumulus'?.46:.4)-(type==='cumulus'?.56:.52)-fine*.03)*1.7));
+      d=Math.max(d,ss(.6,1,m)*(type==='cumulus'?.5:.45));d*=ss(-4,16,yy-top)*ss(.02,.3,env((xx/W-.07)/.86));
+      d*=ss(base+12+(n2(x*.05,3)-.5)*10,base-8,y);
+    }
+    D[y*W+x]=d;
+  }
+  // smooth copy for lighting
+  const T=new Float32Array(W*H);
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++){let a=0,n=0;for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){const xx=x+dx,yy=y+dy;if(xx>=0&&xx<W&&yy>=0&&yy<H){a+=D[yy*W+xx];n++}}T[y*W+x]=a/n}
+  const O=D;
+  // lighting: march toward the sun (up-left), self-shadowing
+  const Lx=-.5,Ly=-.86,steps=type==='cirrus'?0:9,stp=type==='cumulus'?3.8:3.2;
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++){
+    const i=y*W+x,d=D[i],o=i*4;
+    if(d<=.004){img.data[o+3]=0;continue}
+    let od=0;for(let k=1;k<=steps;k++){const sx=Math.round(x+Lx*k*stp),sy=Math.round(y+Ly*k*stp);if(sx>=0&&sx<W&&sy>=0&&sy<H)od+=T[sy*W+sx]}
+    let lit=Math.exp(-od*.29);
+    if(steps){const gx=(T[i+(x<W-3?3:0)]-T[i-(x>2?3:0)]),gy=(T[i+(y<H-3?3*W:0)]-T[i-(y>2?3*W:0)]);lit+=Math.max(-.28,Math.min(.34,-(gx*Lx+gy*Ly)*.85));lit=Math.max(0,Math.min(1,lit))}
+    const belly=type==='cumulus'?ss(.4*H,base,y)*.5:ss(.3*H,base,y)*.3;
+    lit=pal.amb+(1-pal.amb)*lit;
+    let R,G,B;
+    if(type==='cirrus'){R=pal.hi[0];G=pal.hi[1];B=pal.hi[2]}
+    else{
+      const t=Math.pow(lit,.85);
+      R=pal.lo[0]+(pal.hi[0]-pal.lo[0])*t;G=pal.lo[1]+(pal.hi[1]-pal.lo[1])*t;B=pal.lo[2]+(pal.hi[2]-pal.lo[2])*t;
+      R+=(pal.deep[0]-R)*belly;G+=(pal.deep[1]-G)*belly;B+=(pal.deep[2]-B)*belly;
+      // thin edges glow (light scattering)
+      const sc=(1-ss(0,.55,d))*lit*.18;R+=(255-R)*sc;G+=(255-G)*sc;B+=(255-B)*sc;
+    }
+    img.data[o]=R;img.data[o+1]=G;img.data[o+2]=B;img.data[o+3]=Math.min(255,255*Math.pow(Math.min(1,d*1.9),type==='cirrus'?1:.85));
+  }
+  c.putImageData(img,0,0);return cv;
+}
+
+const CPAL_FOR={clear:'day',golden:'golden',storm:'storm'};
+const SPR={};
+function ensureSprites(pal){
+  if(SPR[pal])return SPR[pal];
+  const set=SPR[pal]={cumulus:[],strato:[],cirrus:[],n:0};
+  const plan=[['cumulus',3],['strato',2],['cumulus',11],['cirrus',5],['cumulus',21],['strato',8],['cumulus',34],['cirrus',13]];
+  let i=0;(function step(){if(i>=plan.length)return;const [t,sd]=plan[i++];try{set[t].push(makeCloud(t,CLOUD_PAL[pal],sd*17+3));set.n++}catch(e){}setTimeout(step,26)})();
+  return set;
+}
+
+/* ════════════════════════════════════════════════
    BACKGROUND FX (theme-specific, canvas 2D)
 ════════════════════════════════════════════════ */
-const FX={cv:$('#fx'),cx:null,type:'none',parts:[],w:0,h:0,bat:null,flash:0,
+const FX={cv:$('#fx'),cx:null,type:'none',parts:[],w:0,h:0,bat:null,flash:0,pal:null,cl:[],cover:.38,
  init(){this.cx=this.cv.getContext('2d');this.size()},
- size(){const a=$('#app'),d=Math.min(devicePixelRatio||1,2);this.w=a.clientWidth;this.h=a.clientHeight;this.cv.width=this.w*d;this.cv.height=this.h*d;this.cx.setTransform(d,0,0,d,0,0);this.set(this.type)},
- set(t){this.type=t;const n={clouds:7,stars:70,rain:90,fireflies:26,embers:46,grid:0,none:0}[t]||0;this.parts=[];
+ size(){const a=$('#app'),d=Math.min(devicePixelRatio||1,2);this.w=a.clientWidth;this.h=a.clientHeight;this.cv.width=this.w*d;this.cv.height=this.h*d;this.cx.setTransform(d,0,0,d,0,0);this.cx.imageSmoothingQuality='high';this.set(this.type)},
+ eff(){return this.pal==='storm'?Math.max(.82,this.cover):this.cover},
+ setCover(c){if(Math.abs(c-this.cover)>.08){this.cover=c;this.layout()}},
+ set(t){this.type=t;this.pal=CPAL_FOR[TH.id]||null;if(this.pal)ensureSprites(this.pal);this.layout();
+   const n={stars:70,rain:90,fireflies:26,embers:46}[t]||0;this.parts=[];
    for(let i=0;i<n;i++)this.parts.push(this.mk(t,true));},
+ layout(){
+   if(!this.pal){this.cl=[];return}
+   const w=this.w,h=this.h,cov=this.eff(),r=rnd(4242),L=[],n=(a,b)=>Math.round(a+(b-a)*cov);
+   const add=(z,type,count,wmin,wmax,ymin,ymax,vmin,vmax,al)=>{for(let k=0;k<count;k++){const wd=wmin+r()*(wmax-wmin);L.push({z,type,i:Math.floor(r()*8),w:wd,x:r()*(w+wd)-wd,y:h*(ymin+r()*(ymax-ymin)),v:vmin+r()*(vmax-vmin),a:al*(.9+r()*.1),f:0})}};
+   add(0,'cirrus',n(3,2),w*.95,w*1.35,.02,.3,1.2,2.4,.8);
+   add(1,'cumulus',n(1,3),150,230,.07,.5,2.5,4.5,.8);
+   add(2,'strato',n(1,3),210,330,.18,.72,4,7,.82);
+   add(3,'cumulus',n(1,3),230,340,.1,.7,5,9,.9);
+   add(4,'cumulus',n(0,2),290,410,.45,.88,8,12,.8);
+   this.cl=L.sort((a,b)=>a.z-b.z);
+ },
  mk(t,init){const w=this.w,h=this.h,r=Math.random;
-   if(t==='clouds')return{x:r()*w*1.4-w*.2,y:r()*h*.7,s:60+r()*110,v:3+r()*8,a:.18+r()*.22};
    if(t==='stars')return{x:r()*w,y:r()*h,s:.6+r()*1.8,p:r()*6.28,v:.6+r()*2};
    if(t==='rain')return{x:r()*w*1.2,y:init?r()*h:-20,l:10+r()*18,v:520+r()*380,a:.15+r()*.3};
    if(t==='fireflies')return{x:r()*w,y:r()*h,p:r()*6.28,v:8+r()*18,s:1.5+r()*2.5,a:r()*6.28};
    if(t==='embers')return{x:r()*w,y:init?r()*h:h+10,v:18+r()*50,s:1+r()*2.6,p:r()*6.28,hue:r()};
    return{}},
+ sky(c,w,h,dt){
+   const pal=this.pal,cov=this.eff();
+   if(pal==='day'){
+     const a=.7*(1-.82*cov),cx=w*.82,cy=h*.1,g=c.createRadialGradient(cx,cy,0,cx,cy,w*.8);
+     g.addColorStop(0,`rgba(255,251,228,${a})`);g.addColorStop(.12,`rgba(255,244,205,${a*.6})`);g.addColorStop(.4,`rgba(255,240,200,${a*.16})`);g.addColorStop(1,'rgba(255,240,200,0)');
+     c.fillStyle=g;c.fillRect(0,0,w,h*.75);
+     const g2=c.createRadialGradient(cx,cy,0,cx,cy,34);g2.addColorStop(0,`rgba(255,255,244,${Math.min(1,a*1.5)})`);g2.addColorStop(1,'rgba(255,255,230,0)');c.fillStyle=g2;c.fillRect(cx-40,cy-40,80,80);
+   }else if(pal==='golden'){
+     const cx=w*.2,cy=h*.6,a=.8*(1-.7*cov),g=c.createRadialGradient(cx,cy,0,cx,cy,w*.95);
+     g.addColorStop(0,`rgba(255,230,160,${a})`);g.addColorStop(.14,`rgba(255,196,120,${a*.55})`);g.addColorStop(.5,`rgba(255,140,110,${a*.16})`);g.addColorStop(1,'rgba(255,140,110,0)');
+     c.fillStyle=g;c.fillRect(0,0,w,h);
+   }else if(pal==='storm'){
+     const g=c.createLinearGradient(0,0,0,h*.75);g.addColorStop(0,'rgba(14,20,30,.55)');g.addColorStop(1,'rgba(14,20,30,0)');c.fillStyle=g;c.fillRect(0,0,w,h*.75);
+   }
+   const set=SPR[pal];if(!set)return;
+   for(const o of this.cl){
+     const arr=set[o.type];if(!arr||!arr.length)continue;
+     o.x+=o.v*dt;if(o.x>w+8)o.x=-o.w-8;o.f=Math.min(1,o.f+dt*.9);
+     const sp=arr[o.i%arr.length],hh=sp.height*o.w/sp.width;
+     c.globalAlpha=o.a*o.f;c.drawImage(sp,o.x,o.y,o.w,hh);
+   }
+   c.globalAlpha=1;
+ },
  frame(now,dt){const c=this.cx,w=this.w,h=this.h;c.clearRect(0,0,w,h);const t=this.type;
-   if(t==='clouds'){const warm=TH.id==='golden';for(const p of this.parts){p.x+=p.v*dt;if(p.x>w+p.s*1.5){Object.assign(p,this.mk(t),{x:-p.s*1.5})}
-      c.fillStyle=warm?`rgba(255,220,190,${p.a})`:`rgba(255,255,255,${p.a+.1})`;
-      for(let k=0;k<5;k++){c.beginPath();c.ellipse(p.x+k*p.s*.28,p.y+Math.sin(k*1.7)*p.s*.08,p.s*.34,p.s*.2,0,0,6.283);c.fill()}}}
-   else if(t==='stars'){for(const p of this.parts){const a=.35+.65*Math.abs(Math.sin(now/1000*p.v+p.p));c.fillStyle=`rgba(220,255,235,${a})`;c.fillRect(p.x,p.y,p.s,p.s)}
+   if(this.pal)this.sky(c,w,h,dt);
+   if(t==='stars'){for(const p of this.parts){const a=.35+.65*Math.abs(Math.sin(now/1000*p.v+p.p));c.fillStyle=`rgba(220,255,235,${a})`;c.fillRect(p.x,p.y,p.s,p.s)}
      if(Math.random()<dt*.15&&!this.shoot)this.shoot={x:Math.random()*w,y:Math.random()*h*.4,l:0};
      if(this.shoot){const s=this.shoot;s.l+=dt*420;s.x+=dt*300;s.y+=dt*160;const g=c.createLinearGradient(s.x,s.y,s.x-60,s.y-32);g.addColorStop(0,'rgba(255,255,255,.9)');g.addColorStop(1,'rgba(255,255,255,0)');c.strokeStyle=g;c.lineWidth=2;c.beginPath();c.moveTo(s.x,s.y);c.lineTo(s.x-60,s.y-32);c.stroke();if(s.l>700)this.shoot=null}}
    else if(t==='rain'){c.strokeStyle='rgba(190,215,255,.45)';c.lineWidth=1;for(const p of this.parts){p.y+=p.v*dt;p.x-=p.v*dt*.22;if(p.y>h){Object.assign(p,this.mk(t),{y:-20})}c.globalAlpha=p.a;c.beginPath();c.moveTo(p.x,p.y);c.lineTo(p.x+p.l*.22,p.y-p.l);c.stroke()}c.globalAlpha=1;
@@ -486,8 +650,8 @@ const PRESETS=[
    STATE
 ════════════════════════════════════════════════ */
 const ST={user:null,planes:new Map(),list:[],fetching:false,lastOk:0,lastTry:0,nextAt:0,sel:null,view:'radar',filter:'all',diag:{},cool:{},src:'',err:'',
-  route:LS.get('fleyet.route',{}),cache:LS.get('fleyet.cache',{ac:{},rt:{}}),alerted:new Set(),locState:'idle',hint:false,firstData:false,gpsAcc:null,lastFetchPos:null,shown:80};
-if(!ST.cache.ac)ST.cache={ac:{},rt:{}};
+  route:LS.get('fleyet.route',{}),cache:LS.get('fleyet.cache',{ac:{},rt:{},ph:{}}),alerted:new Set(),locState:'idle',hint:false,firstData:false,gpsAcc:null,lastFetchPos:null,shown:80};
+if(!ST.cache.ac)ST.cache.ac={};if(!ST.cache.rt)ST.cache.rt={};if(!ST.cache.ph)ST.cache.ph={};
 
 /* ════════════════════════════════════════════════
    DATA PROVIDERS
@@ -533,21 +697,22 @@ async function tryProv(k,u,r){
   const P=PROV[k],url=P.url(u.lat.toFixed(4),u.lon.toFixed(4),r);let modes=[];
   if(!P.needsProxy)modes.push('direct'); if(S.proxy)modes.push('proxy');
   if(ST.route[k]==='proxy'&&S.proxy)modes=['proxy','direct'].filter(m=>modes.includes(m));
-  let last;
+  let last;const errs=[];
   for(const m of modes){
     try{const now=Date.now(),d=await fetchJSON(m==='proxy'?proxied(url):url),list=P.parse(d,now);
       ST.diag[k]={ok:true,mode:m,ts:now,n:list.length};
       if(m==='proxy'&&modes.length>1&&ST.route[k]!=='proxy'){ST.route[k]='proxy';LS.set('fleyet.route',ST.route)}
       return{list,name:P.name+(m==='proxy'?' via proxy':''),now}}
-    catch(e){last=e;ST.diag[k]={ok:false,mode:m,ts:Date.now(),msg:e.message};if(e.status===429)break}
+    catch(e){last=e;errs.push((m==='proxy'?'proxy: ':'direct: ')+(e.status===403&&m==='proxy'?'HTTP 403 (feed refused the proxy)':e.status===429?'HTTP 429 (daily/speed limit hit)':e.message));
+      ST.diag[k]={ok:false,mode:m,ts:Date.now(),msg:errs.join(' | ')};if(e.status===429)break}
   }
-  throw last||new Error('no route');
+  const ex=new Error(errs.join(' | ')||'no route');ex.status=last&&last.status;throw ex;
 }
 async function getPlanes(u,r){
   if(S.source==='demo')return Demo.fetch(u,r);
   let cand=S.source==='auto'?AUTO_ORDER.slice():[S.source];
   cand=cand.filter(k=>!(PROV[k].needsProxy&&!S.proxy));
-  if(!cand.length)throw new Error('adsb.fi needs your Cloudflare proxy (Settings → Data)');
+  if(!cand.length)throw new Error('adsb.fi needs your proxy (Settings → Data → Proxy URL)');
   const now=Date.now();
   if(S.source==='auto'){const warm=cand.filter(k=>!(ST.cool[k]>now));if(warm.length)cand=warm}
   const errs=[];
@@ -580,7 +745,7 @@ const Demo={planes:null,
      const dt=(now-p.t0)/1000,d=(p.gs||0)*dt/3600,th=p.track*RAD;
      const q=Object.assign({},p,{lat:p.lat+d*Math.cos(th)/60,lon:p.lon+d*Math.sin(th)/(60*Math.cos(p.lat*RAD)),alt:Math.max(0,p.alt+(p.vs||0)*dt/60),t0:now});
      const dist=Math.hypot((q.lon-u.lon)*60*Math.cos(u.lat*RAD),(q.lat-u.lat)*60);
-     if(dist>r*1.08){const n=this.spawn(u,r,true);n._rt=n._rt;return n}
+     if(dist>r*1.08){const n=this.spawn(u,r,true);return n}
      return q});
    return Promise.resolve({list:this.planes.map(p=>({...p,t0:now-1500})),name:'Demo skies',now});
  }};
@@ -595,7 +760,7 @@ function demoEnrich(p){
    ENRICHMENT (adsbdb.com: aircraft + route lookups)
 ════════════════════════════════════════════════ */
 const Enr={active:0,q:[],TTL:6*3600e3,saveT:0,
- persist(){clearTimeout(this.saveT);this.saveT=setTimeout(()=>{for(const k of['ac','rt']){const e=Object.entries(ST.cache[k]);if(e.length>250){e.sort((a,b)=>b[1].t-a[1].t);ST.cache[k]=Object.fromEntries(e.slice(0,200))}}LS.set('fleyet.cache',ST.cache)},1500)},
+ persist(){clearTimeout(this.saveT);this.saveT=setTimeout(()=>{for(const k of['ac','rt','ph']){const e=Object.entries(ST.cache[k]);if(e.length>250){e.sort((a,b)=>b[1].t-a[1].t);ST.cache[k]=Object.fromEntries(e.slice(0,200))}}LS.set('fleyet.cache',ST.cache)},1500)},
  async get(kind,key){
    const c=ST.cache[kind][key];if(c&&Date.now()-c.t<this.TTL)return c.v;
    const url=`https://api.adsbdb.com/v0/${kind==='ac'?'aircraft':'callsign'}/${encodeURIComponent(key)}`;
@@ -615,7 +780,6 @@ const Enr={active:0,q:[],TTL:6*3600e3,saveT:0,
    };
    if(p.enr._q&&!full)return;p.enr._q=1;
    if(p.enr.rt===undefined||(full&&p.enr.ac===undefined)||(!p.type&&p.enr.ac===undefined)){
-     // use cache synchronously where possible
      const cr=ST.cache.rt[p.callsign],ca=ST.cache.ac[p.hex];
      if(cr&&Date.now()-cr.t<this.TTL)p.enr.rt=cr.v;
      if(ca&&Date.now()-ca.t<this.TTL&&(full||!p.type))p.enr.ac=ca.v;
@@ -624,6 +788,147 @@ const Enr={active:0,q:[],TTL:6*3600e3,saveT:0,
  },
  pump(){while(this.active<3&&this.q.length){const j=this.q.shift();this.active++;j().catch(()=>{}).finally(()=>{this.active--;this.pump()})}}
 };
+
+/* ════════════════════════════════════════════════
+   AIRCRAFT PHOTOS: only shows an image once it has really loaded
+   (adsbdb's own photo links are sometimes dead, so we verify each one
+   and fall back to Planespotters, then to smaller thumbnails)
+════════════════════════════════════════════════ */
+const Photo={
+ load(url,ms=8000){return new Promise(res=>{const im=new Image(),t=setTimeout(()=>{im.src='';res(null)},ms);im.referrerPolicy='no-referrer';
+   im.onload=()=>{clearTimeout(t);res(im.naturalWidth>40?{w:im.naturalWidth,h:im.naturalHeight}:null)};im.onerror=()=>{clearTimeout(t);res(null)};im.src=url})},
+ async ensure(p){
+   if(p.demo){p.ph=false;return}
+   if(p.ph!==undefined&&p.ph!=='pending')return;
+   if(p.ph==='pending')return;
+   const c=ST.cache.ph[p.hex];
+   if(c&&Date.now()-c.t<(c.v?12:1)*3600e3){p.ph=c.v||false;renderPhoto(p);return}
+   p.ph='pending';
+   let found=null,definitive=true;
+   try{
+     const t0=Date.now();while(p.enr&&p.enr.ac===undefined&&Date.now()-t0<6000)await sleep(200);
+     const ac=p.enr&&p.enr.ac;
+     const tryUrl=async(url,thumb,credit,link)=>{if(!url||found)return;const d=await this.load(url);if(d)found={url,w:d.w,h:d.h,credit,link}};
+     if(ac)await tryUrl(ac.url_photo,null,'Photo: airport-data.com');
+     if(!found){
+       try{const r=await fetchJSON('https://api.planespotters.net/pub/photos/hex/'+encodeURIComponent(p.hex),7000);const ph=r&&r.photos&&r.photos[0];
+         if(ph){const big=ph.thumbnail_large&&ph.thumbnail_large.src,sm=ph.thumbnail&&ph.thumbnail.src,cr='© '+(ph.photographer||'Photographer')+' · Planespotters.net';
+           await tryUrl(big,null,cr,ph.link);await tryUrl(sm,null,cr,ph.link)}}
+       catch(e){if(!(e.status===404))definitive=false}
+     }
+     if(!found&&ac)await tryUrl(ac.url_photo_thumbnail,null,'Photo: airport-data.com');
+     if(!found&&!ac&&p.enr&&p.enr.ac===undefined)definitive=false;
+   }catch(e){definitive=false}
+   p.ph=found||false;
+   if(found||definitive){ST.cache.ph[p.hex]={t:Date.now(),v:found||false};Enr.persist()}
+   if(ST.sel===p.hex)renderPhoto(p);
+ }
+};
+function renderPhoto(p){
+  if(!sheetOpen||ST.sel!==p.hex)return;const el=$('#sPhoto');if(!el)return;
+  const ph=p.ph,key=(ph===undefined||ph==='pending')?'load':(ph?ph.url:'none');
+  if(el.dataset.key===key)return;el.dataset.key=key;
+  if(key==='none'){el.className='none';el.innerHTML='';return}
+  if(key==='load'){el.className='';el.innerHTML=`<div class="phload">${planeSVG(kindOf(p),altHex(p.dAlt))}<span>Finding a photo…</span></div><i class="sk"></i>`;return}
+  el.className='';
+  el.innerHTML=`<img class="bgi" alt="" referrerpolicy="no-referrer" src="${esc(ph.url)}"><img class="fgi" alt="${esc(typeName(p))}" referrerpolicy="no-referrer" src="${esc(ph.url)}">
+    ${ph.link?`<a class="credit" href="${esc(ph.link)}" target="_blank" rel="noopener">${esc(ph.credit)}</a>`:`<span class="credit">${esc(ph.credit)}</span>`}
+    <span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></span>`;
+  const fg=$('.fgi',el);const go=()=>requestAnimationFrame(()=>el.classList.add('ready'));
+  if(fg.complete&&fg.naturalWidth)go();else{fg.onload=go;fg.onerror=()=>{el.className='none'}}
+}
+function openLightbox(){
+  const p=ST.planes.get(ST.sel);if(!p||!p.ph)return;
+  $('#lb img').src=p.ph.url;$('#lb span').textContent=p.ph.credit+' · tap to close';$('#lb').classList.add('on');
+}
+
+/* ════════════════════════════════════════════════
+   WEATHER (Open-Meteo: free, no key, CORS-friendly)
+════════════════════════════════════════════════ */
+const WX_DEFS=`<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<radialGradient id="gSun" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#fff7b0"/><stop offset=".55" stop-color="#ffc83a"/><stop offset="1" stop-color="#ff9a1f"/></radialGradient>
+<radialGradient id="gMoon" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#bcc8f2"/></radialGradient>
+<linearGradient id="gCl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#bfcfe6"/></linearGradient>
+<linearGradient id="gClD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c3cddd"/><stop offset="1" stop-color="#7f8ea8"/></linearGradient>
+</defs></svg>`;
+const CLOUD_D='M14 37a7 7 0 0 1-1.3-13.9 10 10 0 0 1 19.2-2.2A8 8 0 0 1 35 37z';
+function wxKind(code,cover){
+  if(code==null)return 'cloudy';
+  if(code===0)return 'clear'; if(code===1)return cover>35?'partly':'clear'; if(code===2)return 'partly'; if(code===3)return 'cloudy';
+  if(code===45||code===48)return 'fog';
+  if(code>=51&&code<=57)return 'drizzle';
+  if((code>=61&&code<=67)||(code>=80&&code<=82))return 'rain';
+  if((code>=71&&code<=77)||code===85||code===86)return 'snow';
+  if(code>=95)return 'thunder';
+  return 'cloudy';
+}
+const WX_TXT={0:'Clear sky',1:'Mostly clear',2:'Partly cloudy',3:'Overcast',45:'Fog',48:'Freezing fog',51:'Light drizzle',53:'Drizzle',55:'Heavy drizzle',56:'Freezing drizzle',57:'Freezing drizzle',61:'Light rain',63:'Rain',65:'Heavy rain',66:'Freezing rain',67:'Freezing rain',71:'Light snow',73:'Snow',75:'Heavy snow',77:'Snow grains',80:'Rain showers',81:'Rain showers',82:'Violent showers',85:'Snow showers',86:'Heavy snow showers',95:'Thunderstorm',96:'Thunderstorm, hail',99:'Severe thunderstorm'};
+function wxIcon(kind,day){
+  const sun=(x,y,s)=>`<g transform="translate(${x} ${y}) scale(${s})"><g class="wx-rays" stroke="#ffb02e" stroke-width="3" stroke-linecap="round">${[0,45,90,135,180,225,270,315].map(a=>`<line x1="24" y1="5" x2="24" y2="9.5" transform="rotate(${a} 24 24)"/>`).join('')}</g><circle cx="24" cy="24" r="10.5" fill="url(#gSun)"/></g>`;
+  const moon=(x,y,s)=>`<g transform="translate(${x} ${y}) scale(${s})"><path d="M30 8.5a15.5 15.5 0 1 0 9.5 27.4A12.5 12.5 0 0 1 30 8.5z" fill="url(#gMoon)"/></g>`;
+  const stars=`<g class="wx-tw" fill="#fff"><circle cx="38" cy="12" r="1.5"/><circle cx="43" cy="22" r="1.1"/><circle cx="31" cy="6" r="1"/></g>`;
+  const cloud=(dark,x=0,y=0,s=1)=>`<path transform="translate(${x} ${y}) scale(${s})" d="${CLOUD_D}" fill="url(#${dark?'gClD':'gCl'})" stroke="${dark?'#6c7a94':'#9fb4d4'}" stroke-width=".8" stroke-opacity=".6"/>`;
+  let b='';
+  switch(kind){
+   case 'clear': b=day?sun(0,0,1):moon(0,0,1)+stars; break;
+   case 'partly': b=(day?sun(-3,-4,.78):moon(-3,-3,.8))+`<g class="wx-drift">${cloud(false,3,5,.98)}</g>`; break;
+   case 'cloudy': b=`<g class="wx-drift2">${cloud(true,-2,-6,.7)}</g><g class="wx-drift">${cloud(false,5,0,1)}</g>`; break;
+   case 'fog': b=`<g opacity=".9">${cloud(false,0,-5,.95)}</g><g class="wx-fog" stroke="#c4d0e4" stroke-width="3" stroke-linecap="round"><line x1="9" y1="38" x2="34" y2="38"/><line x1="15" y1="43" x2="40" y2="43"/></g>`; break;
+   case 'drizzle': case 'rain': {const n=kind==='rain'?3:3;b=cloud(true,0,-6,.98)+[0,1,2].map(i=>`<line class="wx-d" style="animation-delay:${i*.33}s" x1="${16+i*8}" y1="35" x2="${14+i*8}" y2="41" stroke="${kind==='rain'?'#59a8ff':'#8cc4ff'}" stroke-width="${kind==='rain'?3:2.2}" stroke-linecap="round"/>`).join(''); break}
+   case 'snow': b=cloud(true,0,-6,.98)+[0,1,2].map(i=>`<circle class="wx-s" style="animation-delay:${i*.45}s" cx="${16+i*8}" cy="38" r="2.2" fill="#fff" stroke="#9fb4d4" stroke-width=".7"/>`).join(''); break;
+   case 'thunder': b=cloud(true,0,-7,.98)+`<path class="wx-bolt" d="M25 29l-6 10h5l-2 8 9-12h-5.5l3-6z" fill="#ffd21f" stroke="#ff9a1f" stroke-width=".8" stroke-linejoin="round"/>`; break;
+  }
+  return `<svg viewBox="0 0 48 48" class="wxi" aria-hidden="true">${b}</svg>`;
+}
+
+const WX={d:null,t:0,pos:null,loading:false,err:'',open:false,
+ restore(){const sv=LS.get('fleyet.wx',null);if(sv&&sv.d&&Date.now()-sv.t<3*3600e3){this.d=sv.d;this.t=sv.t;this.pos=sv.pos}},
+ async load(force){
+   if(!S.wx||!ST.user||this.loading)return;const u=ST.user;
+   if(!force&&this.d&&Date.now()-this.t<10*60e3&&this.pos&&gcNm(this.pos.lat,this.pos.lon,u.lat,u.lon)<6)return;
+   this.loading=true;
+   try{
+     const base=`https://api.open-meteo.com/v1/forecast?latitude=${u.lat.toFixed(3)}&longitude=${u.lon.toFixed(3)}&timezone=auto&current=`;
+     const vars=['temperature_2m','apparent_temperature','relative_humidity_2m','is_day','precipitation','weather_code','cloud_cover','pressure_msl','wind_speed_10m','wind_direction_10m','wind_gusts_10m'];
+     let j;try{j=await fetchJSON(base+vars.concat('visibility').join(','),8000)}catch(e){if(e.status===400)j=await fetchJSON(base+vars.join(','),8000);else throw e}
+     if(!j||!j.current)throw new Error('no data');
+     this.d=j.current;this.t=Date.now();this.pos={lat:u.lat,lon:u.lon};this.err='';LS.set('fleyet.wx',{d:this.d,t:this.t,pos:this.pos});
+   }catch(e){this.err=e.message}
+   finally{this.loading=false;this.apply();renderWx()}
+ },
+ cover(){const d=this.d;if(!d)return .38;let c=clamp((d.cloud_cover??40)/100,0,1);const k=wxKind(d.weather_code,d.cloud_cover??0);if(['rain','drizzle','snow','thunder','cloudy'].includes(k))c=Math.max(c,.8);return c},
+ apply(){if(this.d)FX.setCover(this.cover())},
+};
+function verdict(d){
+  const k=wxKind(d.weather_code,d.cloud_cover??0),cc=d.cloud_cover??0,vis=d.visibility;
+  if(k==='thunder')return 'Planes are dodging lightning ⚡ stay inside!';
+  if(['rain','drizzle','snow'].includes(k))return 'Wet out there. Planes are flying, you\'ll be soggy ☔';
+  if(k==='fog')return 'Foggy! Planes are playing hide & seek 🌫️';
+  if(vis!=null&&vis<5000)return 'Hazy skies, short sightlines 🌁';
+  if(cc<25)return 'Wide-open skies: great spotting weather ✈️';
+  if(cc<65)return 'Partly cloudy: planes will peek-a-boo ⛅';
+  return 'Thick clouds: planes are hiding up there ☁️';
+}
+function renderWx(){
+  const chip=$('#wxChip'),pop=$('#wxPop'),d=WX.d;
+  if(!S.wx||!d){chip.classList.remove('on');pop.classList.remove('on');WX.open=false;return}
+  const kind=wxKind(d.weather_code,d.cloud_cover??0),day=d.is_day!==0;
+  const h=wxIcon(kind,day)+`<span>${UN.temp(d.temperature_2m)}</span>`;
+  if(chip.dataset.k!==h){chip.dataset.k=h;chip.innerHTML=h}
+  chip.classList.add('on');
+  if(!WX.open){pop.classList.remove('on');return}
+  const kt=d.wind_speed_10m==null?null:d.wind_speed_10m/1.852,gk=d.wind_gusts_10m==null?null:d.wind_gusts_10m/1.852;
+  const press=d.pressure_msl==null?'—':S.units==='us'?(d.pressure_msl*.02953).toFixed(2)+' inHg':Math.round(d.pressure_msl)+' hPa';
+  const html=`<div class="wxTop">${wxIcon(kind,day).replace('class="wxi"','class="wxi" style="width:62px;height:62px"')}<div><b>${UN.temp(d.temperature_2m)}</b><span>${esc(WX_TXT[d.weather_code]||'Conditions')}${d.apparent_temperature!=null?` · feels ${UN.temp(d.apparent_temperature)}`:''}</span></div></div>
+  <div class="wxVerdict">${esc(verdict(d))}</div>
+  <div class="wxGrid"><div><i>Wind</i><b>${UN.spd(kt)}${d.wind_direction_10m!=null?' '+dirName(d.wind_direction_10m):''}</b></div><div><i>Gusts</i><b>${UN.spd(gk)}</b></div>
+  <div><i>Clouds</i><b>${d.cloud_cover!=null?Math.round(d.cloud_cover)+'%':'—'}</b></div><div><i>Visibility</i><b>${d.visibility!=null?UN.dist(d.visibility/1852):'—'}</b></div>
+  <div><i>Humidity</i><b>${d.relative_humidity_2m!=null?Math.round(d.relative_humidity_2m)+'%':'—'}</b></div><div><i>Pressure</i><b>${press}</b></div></div>
+  <div class="wxFoot">Weather by Open-Meteo.com · updated ${ago(WX.t)}</div>`;
+  if(pop.dataset.k!==html){pop.dataset.k=html;pop.innerHTML=html}
+  pop.classList.add('on');
+}
+function toggleWx(){WX.open=!WX.open;renderWx();Snd.tick();if(WX.open)WX.load(false)}
 
 /* ════════════════════════════════════════════════
    PLANE POSITION MATH
@@ -652,7 +957,6 @@ function mergePlanes(list,now){
   ST.planes=next;
   for(const p of next.values())rel(p,now);
   ST.list=[...next.values()].sort((a,b)=>a.dist-b.dist);
-  // alerts & sounds
   if(ST.firstData&&newOnes&&S.sound&&!ST.list.some(p=>p.dist<3))Snd.chime();
   if(S.alerts){for(const p of ST.list){if(p.dist<3&&!p.onGround&&!p.stale&&p.elev>12&&!ST.alerted.has(p.hex)){ST.alerted.add(p.hex);Snd.whoosh();toast(`✈️ <b>${esc(p.callsign||p.reg||p.hex)}</b> is nearly overhead! Look ${dirName(p.brg)}, ${Math.round(p.elev)}° up`,5200);break}}}
   ST.firstData=true;
@@ -668,7 +972,7 @@ function setUser(lat,lon,acc,src){
   const first=!ST.user;ST.user={lat,lon,src};ST.gpsAcc=acc??null;ST.locState='ok';
   if(src==='gps'){S.lastLoc={lat,lon};save()}
   renderStatus();
-  if(first){setSplash('Found you! Scanning the skies…');refresh(true,true)}
+  if(first){setSplash('Found you! Scanning the skies…');refresh(true,true);WX.load(true)}
   else{const lf=ST.lastFetchPos;if(lf&&gcNm(lf.lat,lf.lon,lat,lon)>Math.max(1.5,S.radius*.08)&&!ST.fetching&&Date.now()-ST.lastTry>5000)refresh(false)}
 }
 function startGPS(force){
@@ -697,6 +1001,7 @@ async function refresh(manual,initial){
     mergePlanes(res.list,res.now);ST.lastOk=Date.now();ST.src=res.name;ST.err='';hideBanner();
     Snd.ping(!(manual||initial));
     if(initial)setSplash(`Spotted ${ST.list.length} plane${ST.list.length===1?'':'s'}!`);
+    WX.load(false);
   }catch(e){
     ST.err=e.message;Snd.error();
     if(!ST.firstData){showBanner('data')}else toast('⚠️ Couldn\'t refresh — showing last data');
@@ -734,7 +1039,7 @@ function renderCards(){
   const el=$('#cards'),L=ST.list.slice(0,14);
   if(!L.length){el.innerHTML=`<div class="emptyCard">${ST.firstData?'Clear skies! No planes in range. Try a bigger radius 👆':'Waiting for planes…'}</div>`;return}
   el.innerHTML=L.map(p=>{const k=kindOf(p),rs=routeStr(p);
-    return `<button class="card${ST.sel===p.hex?' sel':''}" data-hex="${p.hex}"><span class="more">Details ›</span>
+    return `<button class="card${ST.sel===p.hex?' sel':''}" data-hex="${p.hex}">
     <div class="cs">${planeSVG(k,altHex(p.dAlt),`style="transform:rotate(${p.track||0}deg)"`)}${esc(p.callsign||p.reg||p.hex)}</div>
     <div class="rt">${esc(rs||typeName(p))}</div>
     <div class="mt"><span>${UN.dist(p.dist)}</span><span>${altTrend(p)} ${UN.alt(p.dAlt)}</span></div></button>`}).join('');
@@ -768,7 +1073,7 @@ function renderList(anim){
   const part=fl.slice(0,ST.shown);
   el.innerHTML=part.map(rowHTML).join('')+(fl.length>part.length?`<button class="btn ghost" id="moreBtn" style="width:100%">Show ${fl.length-part.length} more</button>`:'');
 }
-function patchRows(){ // update fields in-place without rebuilding (keeps scroll & taps smooth)
+function patchRows(){
   const now=Date.now();
   $$('#list .row').forEach(r=>{const p=ST.planes.get(r.dataset.hex);if(!p)return;rel(p,now);
     const d=$('[data-f=dist]',r),dr=$('[data-f=dir]',r),al=$('[data-f=alt]',r);
@@ -785,9 +1090,10 @@ function renderRadChips(){
   $('#radChips').innerHTML=R.map(r=>`<button class="rchip${S.radius===r?' on':''}" data-r="${r}">${UN.dist(r).replace(/\.0/,'')}</button>`).join('');
 }
 function renderCount(){
-  const n=ST.list.length;$('#count').textContent=ST.firstData?`${n} plane${n===1?'':'s'} within ${UN.dist(S.radius)}`:'…';
+  const n=ST.list.length;$('#count').textContent=ST.firstData?`${n} plane${n===1?'':'s'} · ${UN.dist(S.radius).replace(/\.0/,'')}`:'…';
 }
-function renderAll(){renderStatus();renderCount();renderCards();renderRadChips();if(ST.view==='list'){renderFilters();renderList()}if(ST.view==='settings'){const se=$('#settings');if(se.contains(document.activeElement)&&/INPUT|SELECT/.test(document.activeElement.tagName)){const dg=$('#diag');if(dg)dg.innerHTML=diagHTML()}else renderSettings()}updateSndIcon()}
+function renderAll(){renderStatus();renderCount();renderCards();renderRadChips();renderWx();if(ST.view==='list'){renderFilters();renderList()}
+  if(ST.view==='settings'){const se=$('#settings');if(se.contains(document.activeElement)&&/INPUT|SELECT/.test(document.activeElement.tagName)){const dg=$('#diag');if(dg)dg.innerHTML=diagHTML()}else renderSettings()}updateSndIcon()}
 
 /* ════════════════════════════════════════════════
    BANNERS
@@ -799,7 +1105,7 @@ function showBanner(kind){
     b.innerHTML=`<h3>${denied?'📍 Location is switched off':'📍 Can\'t find you yet'}</h3><p>${denied?'Fleyet needs your location to show nearby planes. Allow it in <b>Settings → Privacy → Location Services → Safari Websites</b> (or Fleyet), then try again.':'GPS didn\'t answer. Step outside, wave at a satellite, and try again.'}</p>
       <div class="btnrow"><button class="btn" data-a="retryLoc">Try again</button><button class="btn ghost" data-a="useORD">Peek at Chicago</button><button class="btn ghost" data-a="demo">Demo skies</button></div>`;
   }else{
-    b.innerHTML=`<h3>📡 No flight feed reachable</h3><p>${esc(ST.err||'Unknown error')}</p><p style="font-size:12.5px">Open <b>Settings → Connection check</b> to see which feeds work from your phone. Adding the free Cloudflare proxy fixes most of this.</p>
+    b.innerHTML=`<h3>📡 No flight feed reachable</h3><p>${esc(ST.err||'Unknown error')}</p><p style="font-size:12.5px">Open <b>Settings → Connection check</b> to see which feeds work from your phone. A free proxy (see README) fixes most of this.</p>
       <div class="btnrow"><button class="btn" data-a="retry">Retry</button><button class="btn ghost" data-a="demo">Demo skies</button><button class="btn ghost" data-a="gotoSettings">Settings</button></div>`;
   }
   b.classList.add('on');
@@ -812,14 +1118,13 @@ function hideBanner(){$('#banner').classList.remove('on')}
 let turnRZ=0,turnDrag=null,sheetOpen=false;
 function openSheet(hex){
   const p=ST.planes.get(hex);if(!p)return;ST.sel=hex;sheetOpen=true;ST.openedAt=performance.now();Enr.want(p,true);
-  const rt=p.enr&&p.enr.rt;
-  $('#sheetBody').innerHTML=`<div id="sHero"></div><div id="sLive"></div><div class="actions"><button class="btn ghost" data-a="focus">🎯 Show on radar</button><button class="btn" data-a="open">🌍 Live map</button></div><div class="foot" id="sFoot"></div>`;
-  turnRZ=p.track||0;renderSheetHero(p);renderSheetLive();
+  $('#sheetBody').innerHTML=`<div id="sPhoto"></div><div id="sHero"></div><div id="sLive"></div><div class="actions"><button class="btn ghost" data-a="focus">🎯 Show on radar</button><button class="btn" data-a="open">🌍 Live map</button></div><div class="foot" id="sFoot"></div>`;
+  turnRZ=p.track||0;renderPhoto(p);Photo.ensure(p);renderSheetHero(p);renderSheetLive();
   $('#backdrop').classList.add('on');$('#sheet').classList.add('on');$('#sheetBody').scrollTop=0;Snd.swoosh();renderCards();
 }
 function closeSheet(){sheetOpen=false;$('#backdrop').classList.remove('on');$('#sheet').classList.remove('on')}
 function turntable(k,col){
-  const n=9;let s='';for(let i=0;i<n;i++){const sh=.45+.55*i/(n-1),z=i*2.4;
+  const n=14;let s='';for(let i=0;i<n;i++){const sh=.45+.55*i/(n-1),z=i*1.5;
     s+=`<svg viewBox="-12 -13 24 26" style="transform:translateZ(${z}px);filter:brightness(${i===n-1?1.12:(.38+.4*sh).toFixed(2)})"><path d="${gPath(gKey(k))}" fill="${col}" ${i===n-1?`stroke="rgba(255,255,255,.75)" stroke-width=".35"`:''}/>${i===n-1&&k==='heli'?`<path d="M-10,-10L10,10M10,-10L-10,10" stroke="${col}" stroke-width=".8" opacity=".7"/>`:''}</svg>`}
   return s;
 }
@@ -839,13 +1144,10 @@ function renderSheetHero(p){
       <div class="eta" id="eta"></div><div class="note">Route comes from a callsign database and may not match today's flight.</div></div>`;
   }else if(p.enr&&p.enr.rt===undefined&&/^[A-Z]{3}\d/.test(p.callsign)){routeHTML=`<div class="route"><div class="eta">Looking up route… 🔎</div></div>`}
   else if(/^[A-Z]{3}\d/.test(p.callsign)&&rt===null){routeHTML=`<div class="route"><div class="eta">No route on file for this callsign.</div></div>`}
-  const photo=ac&&(ac.url_photo_thumbnail||ac.url_photo);
   $('#sHero').innerHTML=`<div class="hero"><div class="info"><div class="cs">${esc(p.callsign||p.reg||p.hex.toUpperCase())}</div>
     <div class="al">${flag(iso)} ${esc(airline||'Operator unknown')}</div><div class="ty">${esc(typeName(p))}</div><div class="badges">${badges.join('')}</div></div>
     <div class="stage3d" id="stage3d"><div class="disc"></div><div class="turn" id="turn" style="--rz:${turnRZ}deg">${turntable(k,col)}</div></div></div>
-    ${photo?`<img class="photo" id="photo" alt="" src="${esc(photo)}" referrerpolicy="no-referrer">`:''}
     ${routeHTML}`;
-  const im=$('#photo');if(im){im.onload=()=>im.classList.add('on');im.onerror=()=>im.remove()}
   const st=$('#stage3d');
   st.onpointerdown=e=>{turnDrag={x:e.clientX,rz:turnRZ};st.setPointerCapture(e.pointerId)};
   st.onpointermove=e=>{if(turnDrag){turnRZ=turnDrag.rz+(e.clientX-turnDrag.x)*1.2}};
@@ -894,8 +1196,9 @@ function sw(key,on){return `<button class="sw${on?' on':''}" data-sw="${key}" ar
 function diagHTML(){
   const rows=Object.keys(PROV).map(k=>{const d=ST.diag[k];const P=PROV[k];
     if(!d)return `<div>• <b>${P.name}</b> — not tested yet${P.needsProxy&&!S.proxy?' (needs proxy)':''}</div>`;
-    return `<div>• <b>${P.name}</b> — ${d.ok?`<span class="ok-t">✓ ${d.n} planes (${d.mode})</span>`:`<span class="bad-t">✗ ${esc(d.msg)}${d.mode==='proxy'?' (proxy)':''}</span>`} · ${ago(d.ts)}</div>`}).join('');
-  return rows+(ST.diag.proxy?`<div>• <b>Proxy</b> — ${ST.diag.proxy.ok?'<span class="ok-t">✓ alive</span>':`<span class="bad-t">✗ ${esc(ST.diag.proxy.msg)}</span>`}</div>`:'');
+    return `<div>• <b>${P.name}</b> — ${d.ok?`<span class="ok-t">✓ ${d.n} planes (${d.mode})</span>`:`<span class="bad-t">✗ ${esc(d.msg)}</span>`} · ${ago(d.ts)}</div>`}).join('');
+  const wx=`<div>• <b>Weather</b> — ${WX.d?`<span class="ok-t">✓ ${ago(WX.t)}</span>`:(WX.err?`<span class="bad-t">✗ ${esc(WX.err)}</span>`:'not loaded yet')}</div>`;
+  return rows+(ST.diag.proxy?`<div>• <b>Proxy</b> — ${ST.diag.proxy.ok?'<span class="ok-t">✓ alive</span>':`<span class="bad-t">✗ ${esc(ST.diag.proxy.msg)}</span>`}</div>`:'')+wx;
 }
 function renderSettings(){
   const el=$('#settings');const keep=el.scrollTop;
@@ -909,6 +1212,8 @@ function renderSettings(){
     <div class="stack"><div class="lbl" style="font-weight:600;margin-bottom:8px">Search radius</div>${seg('radius',[[10,'10 nm'],[25,'25 nm'],[50,'50 nm'],[100,'100 nm'],[200,'200 nm']],S.radius)}</div>
     <div class="stack"><div class="lbl" style="font-weight:600;margin-bottom:8px">Auto-refresh</div>${seg('interval',[[0,'Off'],[15,'15 s'],[30,'30 s'],[60,'60 s']],S.interval)}</div>
     <div class="stack"><div class="lbl" style="font-weight:600;margin-bottom:8px">Units</div>${seg('units',[['aviation','Aviation'],['us','US'],['metric','Metric']],S.units)}<small style="display:block;color:var(--muted);font-size:12px;margin-top:6px">${S.units==='aviation'?'feet · knots · nautical miles':S.units==='us'?'feet · mph · miles':'meters · km/h · kilometers'}</small></div>
+    <div class="stack"><div class="lbl" style="font-weight:600;margin-bottom:8px">Temperature</div>${seg('temp',[['f','°F'],['c','°C']],S.temp)}</div>
+    <div class="set"><div class="lbl">Weather badge<small>Conditions at your location, bottom right of the radar</small></div>${sw('wx',S.wx)}</div>
     <div class="set"><div class="lbl">Slow auto-orbit</div>${sw('orbit',S.orbit)}</div>
     <div class="set"><div class="lbl">Show planes on the ground<small>Taxiing &amp; parked aircraft</small></div>${sw('ground',S.ground)}</div>
     <div class="set"><div class="lbl">“Nearly overhead” alerts<small>A whoosh and a toast when a plane passes close by</small></div>${sw('alerts',S.alerts)}</div></div>
@@ -919,14 +1224,14 @@ function renderSettings(){
   <div class="sec"><h4>Data</h4>
     <div class="stack"><div class="lbl" style="font-weight:600;margin-bottom:8px">Flight data source</div>
       <select id="srcSel"><option value="auto"${S.source==='auto'?' selected':''}>Auto (best available)</option><option value="adsbfi"${S.source==='adsbfi'?' selected':''}>adsb.fi (needs proxy)</option><option value="adsblol"${S.source==='adsblol'?' selected':''}>adsb.lol</option><option value="airplaneslive"${S.source==='airplaneslive'?' selected':''}>airplanes.live</option><option value="opensky"${S.source==='opensky'?' selected':''}>OpenSky Network</option><option value="demo"${S.source==='demo'?' selected':''}>Demo skies (simulated)</option></select></div>
-    <div class="stack"><div class="lbl" style="font-weight:600;margin-bottom:4px">Cloudflare proxy URL (optional)<small>Lets Fleyet use adsb.fi — the friendliest free feed — and rescues any feed blocked by CORS. See the README.</small></div>
+    <div class="stack"><div class="lbl" style="font-weight:600;margin-bottom:4px">Proxy URL (Cloudflare or Vercel)<small>Lets Fleyet use adsb.fi, the friendliest free feed. Phones can't read it directly. See the README.</small></div>
       <input type="url" id="proxyIn" placeholder="https://fleyet-proxy.yourname.workers.dev" value="${esc(S.proxy)}" autocapitalize="off" autocorrect="off" spellcheck="false"></div>
     <div class="set"><div class="lbl">Connection check<small>Tests every feed from this phone</small></div><button class="btn" data-a="diag" style="padding:8px 14px">Test</button></div>
     <div class="diag" id="diag">${diagHTML()}</div>
-    <div class="set"><div class="lbl">Clear cached aircraft &amp; routes</div><button class="btn ghost" data-a="clearCache" style="padding:8px 14px">Clear</button></div>
+    <div class="set"><div class="lbl">Clear cached aircraft, routes &amp; photos</div><button class="btn ghost" data-a="clearCache" style="padding:8px 14px">Clear</button></div>
     <div class="set"><div class="lbl">Flip landscape correction<small>Only if the app looks upside-down when you turn the phone</small></div>${sw('flip',S.flip)}</div></div>
   <div class="sec"><h4>About</h4><div class="about"><b>Fleyet</b> is a personal, non-commercial project. Aircraft positions come from volunteer-run ADS-B networks:
-    <a href="https://adsb.fi" target="_blank" rel="noopener">adsb.fi</a>, <a href="https://adsb.lol" target="_blank" rel="noopener">adsb.lol</a> (ODbL), airplanes.live and the OpenSky Network. Aircraft &amp; route lookups by <a href="https://www.adsbdb.com" target="_blank" rel="noopener">adsbdb.com</a>.
+    <a href="https://adsb.fi" target="_blank" rel="noopener">adsb.fi</a>, <a href="https://adsb.lol" target="_blank" rel="noopener">adsb.lol</a> (ODbL), airplanes.live and the OpenSky Network. Aircraft, route &amp; photo lookups by <a href="https://www.adsbdb.com" target="_blank" rel="noopener">adsbdb.com</a> (photos from airport-data.com) and <a href="https://www.planespotters.net" target="_blank" rel="noopener">Planespotters.net</a>. Weather by <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0).
     ADS-B data can be incomplete: some aircraft (military, privacy-blocked, or out of receiver range) won't appear, and routes are best-effort. Not for navigation or safety use.</div></div>`;
   el.scrollTop=keep;
 }
@@ -947,32 +1252,24 @@ function drawRadar(now,dt){
   c.setTransform(RV.d,0,0,RV.d,0,0);c.clearRect(0,0,w,h);
   RV.rad=lerp(RV.rad,S.radius,clamp(dt*5,0,1));
   const R=RV.rad;RV.sc=(Math.min(w,h*1.15)*.415)/R*RV.zoom;
-  // intro swoop
   if(RV.intro<1){RV.intro=Math.min(1,RV.intro+dt*.55);}
   if(RV.auto&&S.orbit&&now-RV.lastTouch>2500)RV.yaw+=dt*.1;
   const zs=R*.5/45000;
-  // ground disc
   const N=72;c.beginPath();for(let i=0;i<=N;i++){const a=i/N*6.2832,p=proj(Math.sin(a)*R,Math.cos(a)*R,0);i?c.lineTo(p.x,p.y):c.moveTo(p.x,p.y)}c.closePath();c.fillStyle=COL.ground;c.fill();
-  // range rings
   c.lineWidth=1.2;for(let k=1;k<=4;k++){const rr=R*k/4;c.beginPath();for(let i=0;i<=N;i++){const a=i/N*6.2832,p=proj(Math.sin(a)*rr,Math.cos(a)*rr,0);i?c.lineTo(p.x,p.y):c.moveTo(p.x,p.y)}c.strokeStyle=COL.ring;c.globalAlpha=k===4?.95:.45;c.stroke()}
   c.globalAlpha=.3;for(let a=0;a<360;a+=45){const p0=proj(0,0,0),p1=proj(Math.sin(a*RAD)*R,Math.cos(a*RAD)*R,0);c.beginPath();c.moveTo(p0.x,p0.y);c.lineTo(p1.x,p1.y);c.strokeStyle=COL.ring;c.stroke()}c.globalAlpha=1;
-  // range labels
   c.font='600 10px -apple-system,system-ui,sans-serif';c.textAlign='center';c.textBaseline='middle';c.fillStyle=COL.muted;
   for(let k=1;k<=4;k++){const p=proj(R*k/4,0,0);c.fillText(UN.dist(R*k/4).replace(/\.0/,''),p.x,p.y+9*p.f)}
-  // compass
   c.font='800 14px -apple-system,system-ui,sans-serif';
   [['N',0,1],['E',1,0],['S',0,-1],['W',-1,0]].forEach(([l,x,y])=>{const p=proj(x*R*1.1,y*R*1.1,0);c.fillStyle=l==='N'?COL.accent2:COL.text;c.globalAlpha=l==='N'?1:.8;c.fillText(l,p.x,p.y)});c.globalAlpha=1;
-  // sweep
   const sa=(now/1000*1.1)%6.2832;
   for(let i=0;i<22;i++){const a0=sa-i*.045,a1=a0-.05,p0=proj(0,0,0),pa=proj(Math.sin(a0)*R,Math.cos(a0)*R,0),pb=proj(Math.sin(a1)*R,Math.cos(a1)*R,0);
     c.beginPath();c.moveTo(p0.x,p0.y);c.lineTo(pa.x,pa.y);c.lineTo(pb.x,pb.y);c.closePath();c.fillStyle=COL.sweep;c.globalAlpha=.2*(1-i/22);c.fill()}c.globalAlpha=1;
-  // you beacon
   const pu=proj(0,0,0),pt=proj(0,0,R*.16),pul=(now/1400)%1;
   c.beginPath();for(let i=0;i<=36;i++){const a=i/36*6.2832,p=proj(Math.sin(a)*R*.14*pul,Math.cos(a)*R*.14*pul,0);i?c.lineTo(p.x,p.y):c.moveTo(p.x,p.y)}c.strokeStyle=COL.accent;c.globalAlpha=1-pul;c.lineWidth=2;c.stroke();c.globalAlpha=1;
   c.beginPath();c.moveTo(pu.x,pu.y);c.lineTo(pt.x,pt.y);c.strokeStyle=COL.accent;c.lineWidth=2;c.stroke();
   c.beginPath();c.arc(pt.x,pt.y,5.5,0,6.283);c.fillStyle=COL.accent;c.fill();c.beginPath();c.arc(pt.x,pt.y,10+3*Math.sin(now/300),0,6.283);c.strokeStyle=COL.accent;c.globalAlpha=.4;c.lineWidth=1.5;c.stroke();c.globalAlpha=1;
   c.font='800 10px -apple-system,system-ui,sans-serif';c.fillStyle=COL.accent;c.fillText('YOU',pt.x,pt.y-17);
-  // planes
   const arr=[];RV.hits=[];
   for(const p of ST.planes.values()){
     const d=dispPos(p,now),x=(d.lon-ST.user.lon)*60*Math.cos(ST.user.lat*RAD),y=(d.lat-ST.user.lat)*60;
@@ -982,23 +1279,19 @@ function drawRadar(now,dt){
   arr.sort((a,b)=>b.pp.depth-a.pp.depth);
   const labels=ST.list.slice(0,7).map(p=>p.hex),taken=[];
   for(const o of arr){
-    const {p,x,y,z,pp}=o,k=kindOf(p),age=clamp((now-p.born)/700,0,1),pop=age<1?1+Math.sin(age*3.14)*.35*(1-age)+(age-1)*0:1,sc=(age<1?(age*age*(3-2*age)):1)*(KSCALE[k]||1);
+    const {p,x,y,z,pp}=o,k=kindOf(p),age=clamp((now-p.born)/700,0,1),sc=(age<1?(age*age*(3-2*age)):1)*(KSCALE[k]||1);
     const sel=ST.sel===p.hex,col=altColor(o.d.alt,1),th=(p.track||0)*RAD,fx=Math.sin(th),fy=Math.cos(th);
     const unit=(24/RV.sc)/(22*Math.max(pp.f,.5))*sc*(sel?1.2:1);
-    // trail
     if(p.trail.length>1){c.beginPath();let first=true;for(const t of p.trail){const tx=(t.lon-ST.user.lon)*60*Math.cos(ST.user.lat*RAD),ty=(t.lat-ST.user.lat)*60,q=proj(tx,ty,t.alt*zs);first?c.moveTo(q.x,q.y):c.lineTo(q.x,q.y);first=false}c.lineTo(pp.x,pp.y);c.strokeStyle=col;c.globalAlpha=.4;c.lineWidth=2;c.lineCap='round';c.stroke();c.globalAlpha=1}
-    // ground shadow + stem
     const g0=proj(x,y,0);
     c.beginPath();c.moveTo(g0.x,g0.y);c.lineTo(pp.x,pp.y);c.strokeStyle=col;c.globalAlpha=.32;c.lineWidth=1.2;c.setLineDash([3,3]);c.stroke();c.setLineDash([]);c.globalAlpha=1;
     c.beginPath();c.ellipse(g0.x,g0.y,6*g0.f*sc,2.6*g0.f*sc,0,0,6.283);c.fillStyle='rgba(0,0,0,.35)';c.fill();
-    // plane glyph (3D, flat on its altitude plane)
     const pts=GLYPH[gKey(k)];
     c.beginPath();pts.forEach(([lx,ly],i)=>{const wx=x+(lx*fy+(-ly)*fx)*unit,wy=y+((-lx)*fx+(-ly)*fy)*unit,q=proj(wx,wy,z);i?c.lineTo(q.x,q.y):c.moveTo(q.x,q.y)});c.closePath();
     c.fillStyle=col;c.fill();c.lineWidth=1.3;c.strokeStyle=sel?'#fff':'rgba(0,0,0,.55)';c.stroke();
     if(k==='heli'){const a=now/60;for(let r=0;r<2;r++){const ang=a+r*1.5708,q1=proj(x+Math.sin(ang)*9*unit,y+Math.cos(ang)*9*unit,z),q2=proj(x-Math.sin(ang)*9*unit,y-Math.cos(ang)*9*unit,z);c.beginPath();c.moveTo(q1.x,q1.y);c.lineTo(q2.x,q2.y);c.strokeStyle=col;c.globalAlpha=.8;c.lineWidth=1.5;c.stroke();c.globalAlpha=1}}
     if(p.emerg||p.squawk==='7700'){c.beginPath();c.arc(pp.x,pp.y,16+4*Math.sin(now/120),0,6.283);c.strokeStyle='#ff2d55';c.lineWidth=2.5;c.stroke()}
     if(sel){const rr=20+3*Math.sin(now/220);c.beginPath();c.arc(pp.x,pp.y,rr,0,6.283);c.strokeStyle=COL.accent;c.lineWidth=2.5;c.stroke();c.beginPath();c.arc(pp.x,pp.y,rr+7+((now/12)%14),0,6.283);c.globalAlpha=.5-((now/12)%14)/28;c.stroke();c.globalAlpha=1}
-    // label
     const lx=pp.x,ly=pp.y-(sel?27:17),lw=(p.callsign||p.reg||'').length*6.4+8;
     const clash=!sel&&taken.some(r=>Math.abs(r.x-lx)<(r.w+lw)/2&&Math.abs(r.y-ly)<12);
     if(sel||(labels.includes(p.hex)&&!clash)){taken.push({x:lx,y:ly,w:lw});const t=p.callsign||p.reg||p.hex.toUpperCase();c.font=`${sel?800:700} ${sel?12:10.5}px -apple-system,system-ui,sans-serif`;c.textAlign='center';c.lineWidth=3;c.strokeStyle='rgba(0,0,0,.55)';c.fillStyle='#fff';
@@ -1007,7 +1300,6 @@ function drawRadar(now,dt){
     RV.hits.push({hex:p.hex,x:pp.x,y:pp.y,depth:pp.depth});
   }
 }
-// gestures
 (function(){
   const cv=RV.cv;
   const dist2=()=>{const a=[...RV.pr.values()];return Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)};
@@ -1016,7 +1308,7 @@ function drawRadar(now,dt){
   cv.addEventListener('pointermove',e=>{const p=RV.pr.get(e.pointerId);if(!p)return;const nx=e.offsetX,ny=e.offsetY,dx=nx-p.x,dy=ny-p.y;p.x=nx;p.y=ny;RV.lastTouch=performance.now();
     if(RV.pr.size===1){RV.yaw-=dx*.009;RV.pitch=clamp(RV.pitch+dy*.005,.18,1.5);if(RV.downAt)RV.downAt.moved+=Math.abs(dx)+Math.abs(dy)}
     else if(RV.pr.size===2&&RV.pinch0){RV.zoom=clamp(RV.pinch0.z*dist2()/RV.pinch0.d,.35,3.5)}});
-  const up=e=>{const p=RV.pr.get(e.pointerId);RV.pr.delete(e.pointerId);RV.lastTouch=performance.now();
+  const up=e=>{RV.pr.delete(e.pointerId);RV.lastTouch=performance.now();
     if(RV.downAt&&RV.pr.size===0&&RV.downAt.moved<10&&performance.now()-RV.downAt.t<500){tapRadar(RV.downAt.x,RV.downAt.y)}
     if(RV.pr.size<2)RV.pinch0=null;if(RV.pr.size===0)RV.downAt=null};
   cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);
@@ -1045,6 +1337,7 @@ const TABS=[['radar','Radar'],['list','Nearby'],['themes','Themes'],['settings',
 function buildTabs(){$('#tabs').innerHTML=TABS.map(([id,n])=>`<button data-tab="${id}" class="${id===ST.view?'on':''}">${ICONS[id]}${n}</button>`).join('')}
 function setView(v){
   ST.view=v;$$('.view').forEach(s=>s.classList.toggle('on',s.id==='v-'+v));$$('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===v));
+  if(v!=='radar'&&WX.open){WX.open=false;renderWx()}
   if(v==='list'){renderFilters();renderList(true)}if(v==='settings')renderSettings();if(v==='radar'){requestAnimationFrame(()=>{sizeRadar();renderCards()})}
   Snd.tick();
 }
@@ -1053,20 +1346,26 @@ function setSplash(m){const e=$('#splashMsg');if(e)e.textContent=m}
 let splashT=Date.now();
 function dismissSplash(){const wait=Math.max(0,1700-(Date.now()-splashT));setTimeout(()=>$('#splash').classList.add('off'),wait)}
 
+// photo zoom + lightbox (before the generic click handler)
+$('#sheet').addEventListener('click',e=>{if(e.target.closest('#sPhoto a'))return;if(e.target.closest('#sPhoto.ready'))openLightbox()});
+$('#lb').addEventListener('click',()=>$('#lb').classList.remove('on'));
+
 document.addEventListener('click',e=>{
+  if(WX.open&&!e.target.closest('#wxPop,#wxChip')){WX.open=false;renderWx()}
   const t=e.target.closest('button,[data-hex],select');if(!t)return;Snd.unlock();
   if(t.dataset.tab){setView(t.dataset.tab);return}
   if(t.id==='moreBtn'){ST.shown+=80;renderList(false);return}
-  if(t.classList.contains('card')){const hex=t.dataset.hex;if(ST.sel===hex)openSheet(hex);else{ST.sel=hex;ST._noScroll=false;Snd.blip();const p=ST.planes.get(hex);if(p)Enr.want(p,true);renderCards()}return}
+  if(t.classList.contains('card')){openSheet(t.dataset.hex);return}
   if(t.classList.contains('row')){openSheet(t.dataset.hex);return}
   if(t.classList.contains('rchip')&&t.dataset.r){S.radius=+t.dataset.r;save();Snd.tick();renderRadChips();renderCount();clearTimeout(RV.rt);RV.rt=setTimeout(()=>refresh(true),500);return}
   if(t.classList.contains('rchip')&&t.dataset.f){ST.filter=t.dataset.f;ST.shown=80;Snd.tick();renderFilters();renderList(true);return}
   if(t.classList.contains('tcard')){applyTheme(t.dataset.tid,true);return}
   if(t.dataset.seg===undefined&&t.parentElement&&t.parentElement.dataset.seg){const k=t.parentElement.dataset.seg,v=t.dataset.v;S[k]=isNaN(+v)?v:+v;save();Snd.tick();
     if(k==='radius'){clearTimeout(RV.rt);RV.rt=setTimeout(()=>refresh(true),500)}if(k==='interval')ST.nextAt=Date.now()+S.interval*1000;renderAll();renderSettings();return}
-  if(t.dataset.sw){const k=t.dataset.sw;S[k]=!S[k];save();if(k==='sound'&&S.sound){Snd.unlock();Snd.blip()}if(k==='orbit'){RV.auto=S.orbit;$('#orbitBtn').classList.toggle('on',S.orbit)}if(k==='flip')layout();if(k==='ground')refresh(true);renderSettings();updateSndIcon();return}
+  if(t.dataset.sw){const k=t.dataset.sw;S[k]=!S[k];save();if(k==='sound'&&S.sound){Snd.unlock();Snd.blip()}if(k==='orbit'){RV.auto=S.orbit;$('#orbitBtn').classList.toggle('on',S.orbit)}if(k==='flip')layout();if(k==='ground')refresh(true);if(k==='wx'&&S.wx)WX.load(true);renderSettings();renderWx();updateSndIcon();return}
   switch(t.id){
-    case 'refBtn':Snd.blip();refresh(true);return;
+    case 'refBtn':Snd.blip();refresh(true);WX.load(false);return;
+    case 'wxChip':toggleWx();return;
     case 'sndBtn':S.sound=!S.sound;save();updateSndIcon();if(S.sound){Snd.unlock();Snd.chime()}toast(S.sound?'🔊 Sound on':'🔇 Sound off',1800);return;
     case 'orbitBtn':S.orbit=!S.orbit;RV.auto=S.orbit;save();t.classList.toggle('on',S.orbit);Snd.tick();return;
     case 'northBtn':RV.yaw=0;RV.auto=false;S.orbit=false;$('#orbitBtn').classList.remove('on');Snd.tick();return;
@@ -1081,7 +1380,7 @@ document.addEventListener('click',e=>{
     case 'retry':hideBanner();refresh(true);return;
     case 'gotoSettings':setView('settings');return;
     case 'testSnd':Snd.unlock();Snd.demo();return;
-    case 'clearCache':ST.cache={ac:{},rt:{}};LS.set('fleyet.cache',ST.cache);ST.planes.forEach(p=>{if(!p.demo)p.enr=null});toast('Cache cleared 🧹',1800);return;
+    case 'clearCache':ST.cache={ac:{},rt:{},ph:{}};LS.set('fleyet.cache',ST.cache);ST.planes.forEach(p=>{if(!p.demo){p.enr=null;p.ph=undefined}});toast('Cache cleared 🧹',1800);return;
     case 'diag':runDiag();return;
     case 'focus':{closeSheet();setView('radar');return}
     case 'open':{const p=ST.planes.get(ST.sel);if(p)window.open('https://globe.adsb.fi/?icao='+p.hex,'_blank','noopener');return}
@@ -1095,7 +1394,6 @@ document.addEventListener('change',e=>{
 });
 document.addEventListener('input',e=>{if(e.target.id==='vol'){S.vol=+e.target.value;save();Snd.vol();clearTimeout(Snd.vt);Snd.vt=setTimeout(()=>{Snd.unlock();Snd.tick()},120)}});
 $('#backdrop').addEventListener('click',()=>{if(performance.now()-(ST.openedAt||0)<500)return;closeSheet()});
-// swipe-down to close sheet
 (function(){const g=$('#grab'),sh=$('#sheet');let y0=null;
   g.addEventListener('pointerdown',e=>{y0=e.clientY;g.setPointerCapture(e.pointerId);sh.style.transition='none'});
   g.addEventListener('pointermove',e=>{if(y0!=null)sh.style.transform=`translateY(${Math.max(0,e.clientY-y0)}px)`});
@@ -1105,13 +1403,13 @@ $('#backdrop').addEventListener('click',()=>{if(performance.now()-(ST.openedAt||
 async function runDiag(){
   const el=$('#diag');el.innerHTML='<div>Testing feeds… 📡</div>';
   const u=ST.user||{lat:41.9786,lon:-87.9048};
-  const saveSrc=S.source;
   if(S.proxy){try{const r=await fetch(S.proxy.replace(/\/+$/,'')+'/',{cache:'no-store'});ST.diag.proxy={ok:r.ok,msg:'HTTP '+r.status}}catch(e){ST.diag.proxy={ok:false,msg:'unreachable ('+e.message+')'}}}
   for(const k of Object.keys(PROV)){
     if(PROV[k].needsProxy&&!S.proxy){ST.diag[k]={ok:false,mode:'direct',ts:Date.now(),msg:'needs proxy'};continue}
     try{await tryProv(k,u,25)}catch(e){}
     el.innerHTML=diagHTML()+'<div>…</div>';
   }
+  await WX.load(true);
   el.innerHTML=diagHTML();
 }
 
@@ -1136,7 +1434,7 @@ try{if(screen.orientation&&screen.orientation.lock)screen.orientation.lock('port
 /* ════════════════════════════════════════════════
    MAIN LOOP
 ════════════════════════════════════════════════ */
-let last=performance.now(),liveT=0,rowT=0;
+let last=performance.now(),liveT=0;
 function loop(t){
   const dt=Math.min(.1,(t-last)/1000);last=t;
   if(!document.hidden){
@@ -1144,26 +1442,28 @@ function loop(t){
     if(ST.view==='radar'&&ST.user)drawRadar(Date.now(),dt);
     else if(ST.view==='radar'){RV.cx.setTransform(RV.d,0,0,RV.d,0,0);RV.cx.clearRect(0,0,RV.w,RV.h)}
     if(sheetOpen){const tn=$('#turn');if(tn){if(!turnDrag)turnRZ+=dt*28;tn.style.setProperty('--rz',turnRZ+'deg')}}
-    liveT+=dt;if(liveT>1){liveT=0;if(sheetOpen)renderSheetLive();if(ST.view==='list')patchRows();if(ST.view==='radar')patchCards();renderStatus();renderCount()}
+    liveT+=dt;if(liveT>1){liveT=0;if(sheetOpen)renderSheetLive();if(ST.view==='list')patchRows();if(ST.view==='radar')patchCards();renderStatus();renderCount();if(WX.open)renderWx()}
   }
   requestAnimationFrame(loop);
 }
 document.addEventListener('visibilitychange',()=>{
   if(!document.hidden&&ST.user&&Date.now()-ST.lastOk>S.interval*1000&&S.interval>0)refresh(false);
+  if(!document.hidden)WX.load(false);
 });
-addEventListener('online',()=>{toast('Back online 📶',2000);refresh(false)});
+addEventListener('online',()=>{toast('Back online 📶',2000);refresh(false);WX.load(false)});
 addEventListener('offline',()=>toast('You\'re offline 📴',2500));
 
 /* ════════════════════════════════════════════════
    BOOT
 ════════════════════════════════════════════════ */
 function boot(){
+  $('#app').insertAdjacentHTML('afterbegin',WX_DEFS);
   $('#markPath').setAttribute('d',gPath('jet'));$$('.splashPath').forEach(p=>p.setAttribute('d',gPath('jet')));
   readColors();FX.init();buildTabs();renderThemes();updateSndIcon();
+  WX.restore();if(WX.d)FX.cover=WX.cover();
   applyTheme(S.theme);
   RV.auto=S.orbit;$('#orbitBtn').classList.toggle('on',S.orbit);
   layout();sizeRadar();
-  // intro camera swoop
   RV.zoom=.5;RV.pitch=.3;const t0=performance.now();(function sw(){const k=clamp((performance.now()-t0)/1800,0,1),e=1-Math.pow(1-k,3);RV.zoom=lerp(.5,1,e);RV.pitch=lerp(.3,1.02,e);if(k<1&&!RV.pr.size)requestAnimationFrame(sw)})();
   renderAll();
   document.addEventListener('pointerdown',()=>{Snd.unlock();setTimeout(()=>Snd.launch(),60)},{once:true,passive:true});
@@ -1171,7 +1471,7 @@ function boot(){
   requestAnimationFrame(loop);setInterval(tickUI,250);
   if('serviceWorker' in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
 }
-window.__fleyet={ST,S,RV,refresh,setView,openSheet,applyTheme,THEMES,Snd,layout};
+window.__fleyet={ST,S,RV,WX,FX,Photo,refresh,setView,openSheet,applyTheme,THEMES,Snd,layout,renderWx};
 boot();
 })();
 </script>
