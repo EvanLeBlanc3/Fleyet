@@ -1,3 +1,10 @@
+# Fleyet ✈️ (update: full-height fix)
+Upload `index.html` and `sw.js` over the old ones, wait a minute, then fully close and reopen the app.
+- Fixes the empty strip under the tab bar when running from the Home Screen: the app now stretches to the full physical screen height, and the tab bar keeps clear of the iPhone's home bar.
+- Regular Safari tabs are unchanged.
+
+---
+
 # Fleyet ✈️ (update: compass + top spacing)
 
 ## Updating your repo

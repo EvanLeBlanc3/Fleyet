@@ -29,7 +29,8 @@
 html,body{margin:0;height:100%;overflow:hidden;background:var(--bg2);overscroll-behavior:none;-webkit-text-size-adjust:100%}
 body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Rounded","SF Pro Text","Segoe UI",Roboto,system-ui,sans-serif}
 button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:pointer}
-#stage{position:fixed;inset:0;overflow:hidden;background:var(--bg2)}
+#stage{position:fixed;left:0;top:0;width:100%;height:100%;overflow:hidden;background:var(--bg2)}
+#sbProbe{position:fixed;left:-9px;top:0;width:1px;height:1px;visibility:hidden;padding-bottom:env(safe-area-inset-bottom,0px);pointer-events:none}
 #app{position:absolute;left:0;top:0;width:100%;height:100%;transform-origin:0 0;display:flex;flex-direction:column;color:var(--text);
   background:linear-gradient(180deg,var(--bg1),var(--bg2));overflow:hidden;
   --st:env(safe-area-inset-top,0px);--sb:env(safe-area-inset-bottom,0px);--top-pad:34px}
@@ -290,6 +291,7 @@ select,input[type=text],input[type=url]{width:100%;padding:10px 12px;border-radi
 </style>
 </head>
 <body>
+<div id="sbProbe"></div>
 <div id="stage">
 <div id="app">
   <canvas id="fx"></canvas>
@@ -1530,6 +1532,18 @@ async function runDiag(){
 /* ════════════════════════════════════════════════
    ROTATION LOCK (iPhone stays portrait, always)
 ════════════════════════════════════════════════ */
+/* Home-screen apps on iPhone can end up a few dozen pixels shorter than the screen, which leaves an empty strip at the bottom.
+   When running as an installed app, stretch to the full physical screen height (and keep the tab bar clear of the home bar). */
+function fitScreen(portrait){
+  const stage=$('#stage'),app=$('#app');
+  const standalone=navigator.standalone===true||(matchMedia&&matchMedia('(display-mode: standalone)').matches);
+  if(!(standalone&&portrait)){stage.style.height='100%';return}
+  const full=Math.max(screen.width||0,screen.height||0),cur=Math.max(innerHeight,document.documentElement.clientHeight||0);
+  const h=Math.max(cur,full>0&&full<1400?full:0);
+  stage.style.height=h+'px';
+  let sb=parseFloat(getComputedStyle($('#sbProbe')).paddingBottom)||0;
+  if(sb<20)app.style.setProperty('--sb','34px');     // safe area not reported: assume the iPhone home-bar height
+}
 function layout(){
   const app=$('#app'),w=innerWidth,h=innerHeight;
   const phone=matchMedia('(hover:none) and (pointer:coarse)').matches&&Math.min(screen.width,screen.height)<700;
@@ -1540,6 +1554,7 @@ function layout(){
     if(ccw){app.style.transform=`translateY(${h}px) rotate(-90deg)`;app.style.setProperty('--st','env(safe-area-inset-left,0px)');app.style.setProperty('--sb','env(safe-area-inset-right,0px)')}
     else{app.style.transform=`translateX(${w}px) rotate(90deg)`;app.style.setProperty('--st','env(safe-area-inset-right,0px)');app.style.setProperty('--sb','env(safe-area-inset-left,0px)')}
   }else{app.style.width='100%';app.style.height='100%';app.style.transform='';app.style.removeProperty('--st');app.style.removeProperty('--sb')}
+  fitScreen(phone&&w<=h);
   requestAnimationFrame(()=>{FX.size();sizeRadar()});
 }
 addEventListener('resize',layout);addEventListener('orientationchange',()=>setTimeout(layout,120));
