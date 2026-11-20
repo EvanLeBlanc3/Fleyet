@@ -26,11 +26,10 @@
 
 /* ───────── BASE ───────── */
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;height:100%;overflow:hidden;background:var(--bg2);overscroll-behavior:none;-webkit-text-size-adjust:100%}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--tabbg,var(--bg2));overscroll-behavior:none;-webkit-text-size-adjust:100%}
 body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Rounded","SF Pro Text","Segoe UI",Roboto,system-ui,sans-serif}
 button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:pointer}
-#stage{position:fixed;left:0;top:0;width:100%;height:100%;overflow:hidden;background:var(--bg2)}
-#sbProbe{position:fixed;left:-9px;top:0;width:1px;height:1px;visibility:hidden;padding-bottom:env(safe-area-inset-bottom,0px);pointer-events:none}
+#stage{position:fixed;inset:0;overflow:hidden;background:var(--bg2)}
 #app{position:absolute;left:0;top:0;width:100%;height:100%;transform-origin:0 0;display:flex;flex-direction:column;color:var(--text);
   background:linear-gradient(180deg,var(--bg1),var(--bg2));overflow:hidden;
   --st:env(safe-area-inset-top,0px);--sb:env(safe-area-inset-bottom,0px);--top-pad:34px}
@@ -205,7 +204,7 @@ select,input[type=text],input[type=url]{width:100%;padding:10px 12px;border-radi
 .about a{color:var(--accent)}
 
 /* tabs */
-#tabs{display:flex;justify-content:space-around;padding:8px 10px max(calc(var(--sb) - 12px),8px);background:var(--panel2);border-top:1px solid var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+#tabs{display:flex;justify-content:space-around;padding:8px 10px max(calc(var(--sb) - 12px),8px);background:var(--tabbg,var(--panel2));border-top:1px solid var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
 #tabs button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:700;color:var(--muted);padding:4px 0;border-radius:14px;transition:color .2s,transform .2s}
 #tabs button svg{width:25px;height:25px;transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
 #tabs button.on{color:var(--accent)}#tabs button.on svg{transform:translateY(-2px) scale(1.18)}
@@ -291,7 +290,6 @@ select,input[type=text],input[type=url]{width:100%;padding:10px 12px;border-radi
 </style>
 </head>
 <body>
-<div id="sbProbe"></div>
 <div id="stage">
 <div id="app">
   <canvas id="fx"></canvas>
@@ -403,7 +401,11 @@ const THEMES=[
 let TH=THEMES[0];
 const cssv=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 let COL={};
-function readColors(){COL={alt0:hex2rgb(cssv('--alt0')),alt1:hex2rgb(cssv('--alt1')),accent:cssv('--accent'),text:cssv('--text'),ring:cssv('--ring'),ground:cssv('--ground'),sweep:cssv('--sweep'),accent2:cssv('--accent2'),muted:cssv('--muted'),line:cssv('--line')}}
+function tabColor(){                       // tab bar color as a solid (opaque) color, so the iOS bottom strip can match it exactly
+  try{const m=cssv('--panel2').match(/[\d.]+/g).map(Number),bg=hex2rgb(cssv('--bg2')),a=m.length>3?m[3]:1;
+    const c=[0,1,2].map(i=>Math.round(m[i]*a+bg[i]*(1-a)));document.documentElement.style.setProperty('--tabbg',`rgb(${c[0]},${c[1]},${c[2]})`)}catch(e){}
+}
+function readColors(){tabColor();COL={alt0:hex2rgb(cssv('--alt0')),alt1:hex2rgb(cssv('--alt1')),accent:cssv('--accent'),text:cssv('--text'),ring:cssv('--ring'),ground:cssv('--ground'),sweep:cssv('--sweep'),accent2:cssv('--accent2'),muted:cssv('--muted'),line:cssv('--line')}}
 function hex2rgb(h){h=h.replace('#','');if(h.length===3)h=[...h].map(c=>c+c).join('');const n=parseInt(h,16);return[(n>>16)&255,(n>>8)&255,n&255]}
 const altColor=(ft,a=1)=>{const t=clamp((ft||0)/40000,0,1),c=COL.alt0.map((v,i)=>Math.round(lerp(v,COL.alt1[i],t)));return `rgba(${c[0]},${c[1]},${c[2]},${a})`};
 const altHex=ft=>{const t=clamp((ft||0)/40000,0,1);return '#'+COL.alt0.map((v,i)=>Math.round(lerp(v,COL.alt1[i],t)).toString(16).padStart(2,'0')).join('')};
@@ -1532,17 +1534,19 @@ async function runDiag(){
 /* ════════════════════════════════════════════════
    ROTATION LOCK (iPhone stays portrait, always)
 ════════════════════════════════════════════════ */
-/* Home-screen apps on iPhone can end up a few dozen pixels shorter than the screen, which leaves an empty strip at the bottom.
-   When running as an installed app, stretch to the full physical screen height (and keep the tab bar clear of the home bar). */
-function fitScreen(portrait){
-  const stage=$('#stage'),app=$('#app');
+/* iOS 26 bug (WebKit #313800): a Home Screen app is sometimes handed a window shorter than the screen.
+   Apps can't draw in that strip, so (1) nudge iOS to recompute the window, and (2) paint the strip the same color as the tab bar. */
+let healN=0;
+function viewportShort(){
   const standalone=navigator.standalone===true||(matchMedia&&matchMedia('(display-mode: standalone)').matches);
-  if(!(standalone&&portrait)){stage.style.height='100%';return}
-  const full=Math.max(screen.width||0,screen.height||0),cur=Math.max(innerHeight,document.documentElement.clientHeight||0);
-  const h=Math.max(cur,full>0&&full<1400?full:0);
-  stage.style.height=h+'px';
-  let sb=parseFloat(getComputedStyle($('#sbProbe')).paddingBottom)||0;
-  if(sb<20)app.style.setProperty('--sb','34px');     // safe area not reported: assume the iPhone home-bar height
+  const full=Math.max(screen.width||0,screen.height||0),vv=(window.visualViewport&&visualViewport.height)||innerHeight;
+  return standalone&&innerWidth<=innerHeight&&full>0&&full-Math.min(innerHeight,vv)>20;
+}
+function heal(force){
+  if(!viewportShort()){healN=0;return}
+  if(!force&&healN>=3)return;healN++;
+  const a=$('#app');a.style.display='none';void a.offsetHeight;a.style.display='';   // forces WebKit to re-measure the window
+  requestAnimationFrame(()=>requestAnimationFrame(layout));
 }
 function layout(){
   const app=$('#app'),w=innerWidth,h=innerHeight;
@@ -1554,10 +1558,11 @@ function layout(){
     if(ccw){app.style.transform=`translateY(${h}px) rotate(-90deg)`;app.style.setProperty('--st','env(safe-area-inset-left,0px)');app.style.setProperty('--sb','env(safe-area-inset-right,0px)')}
     else{app.style.transform=`translateX(${w}px) rotate(90deg)`;app.style.setProperty('--st','env(safe-area-inset-right,0px)');app.style.setProperty('--sb','env(safe-area-inset-left,0px)')}
   }else{app.style.width='100%';app.style.height='100%';app.style.transform='';app.style.removeProperty('--st');app.style.removeProperty('--sb')}
-  fitScreen(phone&&w<=h);
   requestAnimationFrame(()=>{FX.size();sizeRadar()});
 }
-addEventListener('resize',layout);addEventListener('orientationchange',()=>setTimeout(layout,120));
+addEventListener('resize',layout);addEventListener('orientationchange',()=>{setTimeout(layout,120);setTimeout(()=>heal(true),400)});
+if(window.visualViewport)visualViewport.addEventListener('resize',()=>{layout();});
+addEventListener('pageshow',()=>{healN=0;setTimeout(heal,150)});
 try{if(screen.orientation&&screen.orientation.lock)screen.orientation.lock('portrait').catch(()=>{})}catch(e){}
 
 /* ════════════════════════════════════════════════
@@ -1578,7 +1583,7 @@ function loop(t){
 }
 document.addEventListener('visibilitychange',()=>{
   if(!document.hidden&&ST.user&&Date.now()-ST.lastOk>S.interval*1000&&S.interval>0)refresh(false);
-  if(!document.hidden)WX.load(false);
+  if(!document.hidden){WX.load(false);healN=0;setTimeout(heal,200)}
 });
 addEventListener('online',()=>{toast('Back online 📶',2000);refresh(false);WX.load(false)});
 addEventListener('offline',()=>toast('You\'re offline 📴',2500));
@@ -1598,6 +1603,7 @@ function boot(){
   renderAll();
   document.addEventListener('pointerdown',()=>{Snd.unlock();setTimeout(()=>Snd.launch(),60)},{once:true,passive:true});
   startGPS();
+  [250,900,2200].forEach(t=>setTimeout(heal,t));
   requestAnimationFrame(loop);setInterval(tickUI,250);
   if('serviceWorker' in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
 }

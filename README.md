@@ -1,3 +1,11 @@
+# Fleyet ✈️ (update: bottom-edge fix)
+Upload `index.html` and `sw.js` over the old ones, wait a minute, then fully close and reopen the app.
+- Removes last update's forced-height change, which clipped the tab bar.
+- iOS 26 sometimes gives Home Screen apps a window ~60px shorter than the screen (WebKit bug 313800). Apps cannot draw in that strip, so Fleyet now (1) asks iOS to re-measure the window at launch, on returning to the app and when you rotate, and (2) paints the strip the exact color of the tab bar so it looks like one seamless bar.
+- If the strip persists, delete the Fleyet icon, force-quit Safari, and add it to the Home Screen again.
+
+---
+
 # Fleyet ✈️ (update: full-height fix)
 Upload `index.html` and `sw.js` over the old ones, wait a minute, then fully close and reopen the app.
 - Fixes the empty strip under the tab bar when running from the Home Screen: the app now stretches to the full physical screen height, and the tab bar keeps clear of the iPhone's home bar.

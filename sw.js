@@ -1,6 +1,6 @@
 // Fleyet service worker: caches the app shell so it opens offline.
 // Live flight, weather and photo data are NEVER cached here (always fresh from the network).
-const CACHE = 'fleyet-v6';
+const CACHE = 'fleyet-v7';
 const SHELL = ['./', './index.html', './manifest.webmanifest',
   './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
 
