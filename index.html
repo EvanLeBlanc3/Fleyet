@@ -32,7 +32,7 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 #stage{position:fixed;inset:0;overflow:hidden;background:var(--bg2)}
 #app{position:absolute;left:0;top:0;width:100%;height:100%;transform-origin:0 0;display:flex;flex-direction:column;color:var(--text);
   background:linear-gradient(180deg,var(--bg1),var(--bg2));overflow:hidden;
-  --st:env(safe-area-inset-top,0px);--sb:env(safe-area-inset-bottom,0px);--top-pad:16px}
+  --st:env(safe-area-inset-top,0px);--sb:env(safe-area-inset-bottom,0px);--top-pad:34px}
 [data-theme="blueprint"] #app{background:
   linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px) 0 0/28px 28px,
   linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px) 0 0/28px 28px,
@@ -90,6 +90,17 @@ main{flex:1;min-height:0;position:relative}
 #legend{font-size:10.5px;color:var(--muted);display:flex;align-items:center;gap:5px;font-weight:600;flex:none}
 #legend i{display:block;width:46px;height:7px;border-radius:5px;background:linear-gradient(90deg,var(--alt0),var(--alt1))}
 #count{font-size:11.5px;font-weight:800;color:var(--text);padding:5px 10px;border-radius:999px;background:var(--panel);border:1px solid var(--line);white-space:nowrap;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);margin-left:auto}
+#hud{position:absolute;left:50%;top:82px;transform:translateX(-50%);display:none;align-items:center;gap:9px;padding:5px 15px 5px 7px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);z-index:4;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.28);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);white-space:nowrap;color:var(--text)}
+#hud.on{display:flex;animation:hudIn .4s cubic-bezier(.2,1.4,.4,1)}
+@keyframes hudIn{from{opacity:0;transform:translateX(-50%) scale(.8)}}
+#hud svg{width:40px;height:40px;flex:none}
+#hud b{font-size:19px;font-weight:900;line-height:1.05;display:block}
+#hud small{display:block;font-size:11px;font-weight:700;color:var(--muted);margin-top:1px}
+#compassBtn.on{animation:cmpGlow 2.4s ease-in-out infinite}
+@keyframes cmpGlow{50%{box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 28%,transparent)}}
+.rg{display:flex;align-items:center;gap:10px}
+.rg b{min-width:42px;text-align:right;font-weight:800}
+#lookA{transition:transform .18s linear}
 #wxChip{display:none;align-items:center;gap:2px;padding:2px 11px 2px 4px;border-radius:999px;background:var(--panel);border:1px solid var(--line);font-weight:800;font-size:15px;color:var(--text);flex:none;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:transform .15s}
 #wxChip.on{display:inline-flex}
 #wxChip:active{transform:scale(.92)}
@@ -307,6 +318,7 @@ select,input[type=text],input[type=url]{width:100%;padding:10px 12px;border-radi
         <div class="rctl" id="rSide">
           <button class="ibtn on" id="orbitBtn" aria-label="Auto-orbit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><ellipse cx="12" cy="12" rx="10" ry="4.5"/><circle cx="19" cy="9" r="1.6" fill="currentColor"/></svg></button>
           <button class="ibtn" id="northBtn" aria-label="North up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l5 17-5-4-5 4z"/></svg></button>
+          <button class="ibtn" id="compassBtn" aria-label="Compass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.6 8.4l-2.1 5.1-5.1 2.1 2.1-5.1z" fill="currentColor"/></svg></button>
           <button class="ibtn" id="tiltBtn" aria-label="Tilt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15l9-9 9 9"/><path d="M3 20h18"/></svg></button>
         </div>
         <div id="bRow">
@@ -315,6 +327,7 @@ select,input[type=text],input[type=url]{width:100%;padding:10px 12px;border-radi
           <button id="wxChip" aria-label="Weather"></button>
         </div>
         <div id="wxPop"></div>
+        <div id="hud"><svg viewBox="0 0 40 40"><g id="hudRose"><circle cx="20" cy="20" r="15.5" fill="none" stroke="currentColor" stroke-opacity=".3" stroke-width="2"/><text x="20" y="12.6" text-anchor="middle" font-size="8" font-weight="900" fill="var(--accent2)">N</text><text x="30.3" y="23" text-anchor="middle" font-size="7" font-weight="800" fill="currentColor">E</text><text x="20" y="33.6" text-anchor="middle" font-size="7" font-weight="800" fill="currentColor">S</text><text x="9.7" y="23" text-anchor="middle" font-size="7" font-weight="800" fill="currentColor">W</text></g><path d="M20 0.8l3.4 5.4h-6.8z" fill="var(--accent)"/><circle cx="20" cy="20" r="1.8" fill="var(--accent)"/></svg><div><b id="hudT1">…</b><small id="hudT2"></small></div></div>
         <div class="banner" id="banner"></div>
       </div>
       <div id="cards"></div>
@@ -371,7 +384,7 @@ const flag=iso=>iso&&iso.length===2?String.fromCodePoint(...[...iso.toUpperCase(
 /* ════════════════════════════════════════════════
    SETTINGS & THEMES
 ════════════════════════════════════════════════ */
-const DEF={theme:'clear',units:'aviation',temp:'f',wx:true,radius:25,interval:30,sound:true,vol:.7,source:'auto',proxy:'',ground:false,alerts:true,orbit:true,flip:false,loc:'gps',lastLoc:null};
+const DEF={theme:'clear',units:'aviation',temp:'f',wx:true,radius:25,interval:30,sound:true,vol:.7,source:'auto',proxy:'',ground:false,alerts:true,orbit:true,flip:false,loc:'gps',lastLoc:null,topPad:34,fov:60};
 const S=Object.assign({},DEF,LS.get('fleyet.settings',{}));
 const save=()=>LS.set('fleyet.settings',S);
 
@@ -843,6 +856,91 @@ function openLightbox(){
 }
 
 /* ════════════════════════════════════════════════
+   COMPASS (phone orientation → where you're looking)
+════════════════════════════════════════════════ */
+const angd=(a,b)=>((a-b+540)%360)-180;               // signed shortest turn from b to a
+function backHeading(alpha,beta,gamma){               // Android: compass heading of the phone's back camera
+  const x=beta*RAD,y=gamma*RAD,z=alpha*RAD,cY=Math.cos(y),cZ=Math.cos(z),sX=Math.sin(x),sY=Math.sin(y),sZ=Math.sin(z);
+  const Vx=-cZ*sY-sZ*sX*cY,Vy=-sZ*sY+cZ*sX*cY;let h=Math.atan(Vx/Vy);
+  if(Vy<0)h+=Math.PI;else if(Vx<0)h+=2*Math.PI;return h/RAD;
+}
+const CMP={on:false,starting:false,hd:null,disp:null,tilt:null,acc:null,lastEv:0,sector:-1,ctr:new Set(),lastPing:0,h:null,wt:0,
+ live(){return this.on&&this.disp!=null&&Date.now()-this.lastEv<3500},
+ async start(){
+   if(this.on||this.starting)return;
+   if(!('DeviceOrientationEvent' in window)){toast('🧭 This device has no compass sensor');return}
+   this.starting=true;
+   try{
+     const D=window.DeviceOrientationEvent;
+     if(typeof D.requestPermission==='function'){           // iPhone asks permission, and only from a tap
+       let r='denied';try{r=await D.requestPermission()}catch(e){}
+       if(r!=='granted'){Snd.error();toast('🧭 Compass blocked. Tap the compass again and choose <b>Allow</b>, or enable Motion &amp; Orientation for this site in iPhone Settings',6500);return}
+     }
+     this.h=e=>this.onEv(e);
+     addEventListener('deviceorientationabsolute',this.h,true);addEventListener('deviceorientation',this.h,true);
+     this.on=true;this.hd=null;this.disp=null;this.tilt=null;this.lastEv=0;this.sector=-1;this.ctr=new Set();
+     $('#compassBtn').classList.add('on');$('#hud').classList.add('on');updateHud();Snd.chime();
+     toast('🧭 Compass on! The radar now turns with you',3400);
+     clearTimeout(this.wt);this.wt=setTimeout(()=>{if(this.on&&this.hd==null)toast('🧭 No compass data yet. Hold the phone up and wave it in a figure 8',5200)},3200);
+   }finally{this.starting=false}
+ },
+ stop(quiet){
+   if(!this.on)return;removeEventListener('deviceorientationabsolute',this.h,true);removeEventListener('deviceorientation',this.h,true);
+   this.on=false;this.hd=null;this.disp=null;clearTimeout(this.wt);
+   $('#compassBtn').classList.remove('on');$('#hud').classList.remove('on');if(!quiet){Snd.tick();toast('🧭 Compass off: north is up again',2200)}
+   if(sheetOpen)updateLook();
+ },
+ onEv(e){
+   let hd=null;
+   if(typeof e.webkitCompassHeading==='number'&&isFinite(e.webkitCompassHeading)){hd=e.webkitCompassHeading;this.acc=typeof e.webkitCompassAccuracy==='number'?e.webkitCompassAccuracy:null}
+   else if((e.absolute===true||e.type==='deviceorientationabsolute')&&e.alpha!=null&&e.beta!=null&&e.gamma!=null){hd=backHeading(e.alpha,e.beta,e.gamma);this.acc=null}
+   if(hd==null)return;
+   this.hd=((hd%360)+360)%360;if(typeof e.beta==='number')this.tilt=e.beta;this.lastEv=Date.now();
+   if(this.disp==null)this.disp=this.hd;
+ },
+ step(dt){if(this.on&&this.disp!=null&&this.hd!=null)this.disp=(this.disp+angd(this.hd,this.disp)*clamp(dt*9,0,1)+360)%360},
+ elev(){return(this.tilt==null||this.tilt<35)?null:clamp(this.tilt-90,-90,90)}      // how far up the back of the phone points
+};
+function inView(){
+  if(!CMP.live())return [];const now=Date.now(),half=S.fov/2,out=[];
+  for(const p of ST.list){if(p.stale||p.onGround)continue;rel(p,now);const d=Math.abs(angd(p.brg,CMP.disp));if(d<=half)out.push({p,d})}
+  return out.sort((a,b)=>a.p.dist-b.p.dist).map(o=>o.p);
+}
+function updateHud(){
+  if(!CMP.on)return;
+  const t1=$('#hudT1'),t2=$('#hudT2'),rose=$('#hudRose');
+  if(!CMP.live()){t1.textContent='Finding north…';t2.textContent='wave the phone in a figure 8';return}
+  const hd=CMP.disp;rose.setAttribute('transform',`rotate(${(-hd).toFixed(1)} 20 20)`);
+  t1.textContent=`${dirName(hd)}  ${Math.round(CMP.hd)}°`;
+  const iv=inView(),ev=CMP.elev();
+  let s=ev==null?'hold the phone upright':`looking ${ev>=0?'↑':'↓'} ${Math.abs(Math.round(ev))}°`;
+  s+=` · ${iv.length} in view`;
+  if(CMP.acc!=null&&(CMP.acc<0||CMP.acc>25))s='⚠ wave the phone in a figure 8 to calibrate';
+  t2.textContent=s;
+  const sec=Math.round(hd/45)%8;if(CMP.sector!==-1&&sec!==CMP.sector)Snd.tone(980,.03,{gain:.07,type:'sine'});CMP.sector=sec;
+  const cur=new Set();for(const p of iv)if(Math.abs(angd(p.brg,hd))<8)cur.add(p.hex);
+  let fresh=false;for(const h of cur)if(!CMP.ctr.has(h))fresh=true;CMP.ctr=cur;
+  if(fresh&&Date.now()-CMP.lastPing>1800){CMP.lastPing=Date.now();Snd.tone(1320,.09,{gain:.13,type:'sine'});Snd.tone(1760,.12,{gain:.1,type:'sine',delay:.07})}
+}
+function lookParts(p){
+  const el=Math.round(p.elev),over=p.dist<1.2&&p.elev>45;
+  if(CMP.live()){
+    const d=angd(p.brg,CMP.disp),ad=Math.abs(d),ev=CMP.elev();let vert='';
+    if(ev!=null){const dv=p.elev-ev;if(Math.abs(dv)>8)vert=dv>0?` · tilt up ${Math.round(dv)}°`:` · tilt down ${Math.round(-dv)}°`}
+    if(over)return{t:'Look straight up! 👆',s:`${UN.dist(p.dist)} away · almost overhead`,rot:0};
+    if(ad<=10)return{t:'🎯 Dead ahead!',s:`${UN.dist(p.dist)} away · ${el}° above the horizon${vert}`,rot:d};
+    return{t:`Turn ${d>0?'right':'left'} ${Math.round(ad)}°`,s:`then look ${el}° up · ${UN.dist(p.dist)} away${vert}`,rot:d};
+  }
+  return{t:over?'Look straight up! 👆':`Look ${dirName(p.brg)}, ${el}° above the horizon`,s:`${UN.dist(p.dist)} away · bearing ${Math.round(p.brg)}°`,rot:p.brg};
+}
+function updateLook(){
+  const p=ST.planes.get(ST.sel),t=$('#lookT');if(!p||!t)return;rel(p,Date.now());
+  const o=lookParts(p),s=$('#lookS'),a=$('#lookA');
+  if(t.textContent!==o.t)t.textContent=o.t;if(s.textContent!==o.s)s.textContent=o.s;a.style.transform=`rotate(${o.rot.toFixed(1)}deg)`;
+}
+function applyTopPad(){$('#app').style.setProperty('--top-pad',S.topPad+'px')}
+
+/* ════════════════════════════════════════════════
    WEATHER (Open-Meteo: free, no key, CORS-friendly)
 ════════════════════════════════════════════════ */
 const WX_DEFS=`<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -1174,8 +1272,9 @@ function renderSheetLive(){
   const country=(ac&&ac.registered_owner_country_name)||'—';
   const catName={A1:'Light',A2:'Small',A3:'Large',A4:'High-vortex',A5:'Heavy',A6:'High-perf',A7:'Rotorcraft'}[p.cat]||'—';
   const sq=p.squawk||'—';
-  $('#sLive').innerHTML=`<div class="look"><div class="arrow"><svg viewBox="0 0 24 24" fill="currentColor" style="transform:rotate(${p.brg}deg)"><path d="M12 2l6 19-6-4-6 4z"/></svg></div>
-    <div>${over?'Look straight up! 👆':`Look ${dirName(p.brg)}, ${Math.round(p.elev)}° above the horizon`}<small>${UN.dist(p.dist)} away · bearing ${Math.round(p.brg)}°</small></div></div>
+  const lk=lookParts(p);
+  $('#sLive').innerHTML=`<div class="look"><div class="arrow"><svg id="lookA" viewBox="0 0 24 24" fill="currentColor" style="transform:rotate(${lk.rot.toFixed(1)}deg)"><path d="M12 2l6 19-6-4-6 4z"/></svg></div>
+    <div><span id="lookT">${esc(lk.t)}</span><small id="lookS">${esc(lk.s)}</small></div></div>
    <div class="grid">
     <div class="tile"><i>Altitude</i><b>${UN.alt(p.dAlt)}</b></div><div class="tile"><i>Ground speed</i><b>${UN.spd(p.gs)}</b></div>
     <div class="tile"><i>Heading</i><b>${p.track==null?'—':Math.round(p.track)+'° '+dirName(p.track)}</b></div><div class="tile"><i>Vertical</i><b class="sm" style="font-size:17px">${UN.vs(p.vs)}</b></div>
@@ -1213,10 +1312,13 @@ function renderSettings(){
     <div class="stack"><div class="lbl" style="font-weight:600;margin-bottom:8px">Auto-refresh</div>${seg('interval',[[0,'Off'],[15,'15 s'],[30,'30 s'],[60,'60 s']],S.interval)}</div>
     <div class="stack"><div class="lbl" style="font-weight:600;margin-bottom:8px">Units</div>${seg('units',[['aviation','Aviation'],['us','US'],['metric','Metric']],S.units)}<small style="display:block;color:var(--muted);font-size:12px;margin-top:6px">${S.units==='aviation'?'feet · knots · nautical miles':S.units==='us'?'feet · mph · miles':'meters · km/h · kilometers'}</small></div>
     <div class="stack"><div class="lbl" style="font-weight:600;margin-bottom:8px">Temperature</div>${seg('temp',[['f','°F'],['c','°C']],S.temp)}</div>
+    <div class="stack"><div class="lbl" style="font-weight:600;margin-bottom:8px">Compass field of view</div>${seg('fov',[[40,'Narrow'],[60,'Normal'],[90,'Wide']],S.fov)}<small style="display:block;color:var(--muted);font-size:12px;margin-top:6px">How wide the “in view” wedge is when the compass is on</small></div>
     <div class="set"><div class="lbl">Weather badge<small>Conditions at your location, bottom right of the radar</small></div>${sw('wx',S.wx)}</div>
     <div class="set"><div class="lbl">Slow auto-orbit</div>${sw('orbit',S.orbit)}</div>
     <div class="set"><div class="lbl">Show planes on the ground<small>Taxiing &amp; parked aircraft</small></div>${sw('ground',S.ground)}</div>
     <div class="set"><div class="lbl">“Nearly overhead” alerts<small>A whoosh and a toast when a plane passes close by</small></div>${sw('alerts',S.alerts)}</div></div>
+  <div class="sec"><h4>Display</h4>
+    <div class="stack"><div class="lbl" style="font-weight:600;margin-bottom:6px">Top spacing<small>Raise this if the top of the app looks fuzzy near the Dynamic Island</small></div><div class="rg"><input type="range" id="topPad" min="0" max="80" step="2" value="${S.topPad}"><b id="topPadVal">${S.topPad}px</b></div></div></div>
   <div class="sec"><h4>Sound</h4>
     <div class="set"><div class="lbl">Sound effects</div>${sw('sound',S.sound)}</div>
     <div class="stack"><div class="lbl" style="font-weight:600;margin-bottom:6px">Volume</div><input type="range" id="vol" min="0" max="1" step=".05" value="${S.vol}"></div>
@@ -1253,7 +1355,9 @@ function drawRadar(now,dt){
   RV.rad=lerp(RV.rad,S.radius,clamp(dt*5,0,1));
   const R=RV.rad;RV.sc=(Math.min(w,h*1.15)*.415)/R*RV.zoom;
   if(RV.intro<1){RV.intro=Math.min(1,RV.intro+dt*.55);}
-  if(RV.auto&&S.orbit&&now-RV.lastTouch>2500)RV.yaw+=dt*.1;
+  const cmpLive=CMP.live();
+  if(cmpLive)RV.yaw=CMP.disp*RAD;
+  else if(RV.auto&&S.orbit&&now-RV.lastTouch>2500)RV.yaw+=dt*.1;
   const zs=R*.5/45000;
   const N=72;c.beginPath();for(let i=0;i<=N;i++){const a=i/N*6.2832,p=proj(Math.sin(a)*R,Math.cos(a)*R,0);i?c.lineTo(p.x,p.y):c.moveTo(p.x,p.y)}c.closePath();c.fillStyle=COL.ground;c.fill();
   c.lineWidth=1.2;for(let k=1;k<=4;k++){const rr=R*k/4;c.beginPath();for(let i=0;i<=N;i++){const a=i/N*6.2832,p=proj(Math.sin(a)*rr,Math.cos(a)*rr,0);i?c.lineTo(p.x,p.y):c.moveTo(p.x,p.y)}c.strokeStyle=COL.ring;c.globalAlpha=k===4?.95:.45;c.stroke()}
@@ -1265,6 +1369,13 @@ function drawRadar(now,dt){
   const sa=(now/1000*1.1)%6.2832;
   for(let i=0;i<22;i++){const a0=sa-i*.045,a1=a0-.05,p0=proj(0,0,0),pa=proj(Math.sin(a0)*R,Math.cos(a0)*R,0),pb=proj(Math.sin(a1)*R,Math.cos(a1)*R,0);
     c.beginPath();c.moveTo(p0.x,p0.y);c.lineTo(pa.x,pa.y);c.lineTo(pb.x,pb.y);c.closePath();c.fillStyle=COL.sweep;c.globalAlpha=.2*(1-i/22);c.fill()}c.globalAlpha=1;
+  if(cmpLive){
+    const h0=CMP.disp,half=S.fov/2,p0=proj(0,0,0);
+    c.beginPath();c.moveTo(p0.x,p0.y);
+    for(let i=0;i<=16;i++){const a=(h0-half+S.fov*i/16)*RAD,q=proj(Math.sin(a)*R,Math.cos(a)*R,0);c.lineTo(q.x,q.y)}
+    c.closePath();c.fillStyle=COL.accent;c.globalAlpha=.17;c.fill();c.globalAlpha=.75;c.lineWidth=1.6;c.strokeStyle=COL.accent;c.stroke();
+    const gq=proj(Math.sin(h0*RAD)*R,Math.cos(h0*RAD)*R,0);c.beginPath();c.moveTo(p0.x,p0.y);c.lineTo(gq.x,gq.y);c.setLineDash([5,5]);c.globalAlpha=.85;c.stroke();c.setLineDash([]);c.globalAlpha=1;
+  }
   const pu=proj(0,0,0),pt=proj(0,0,R*.16),pul=(now/1400)%1;
   c.beginPath();for(let i=0;i<=36;i++){const a=i/36*6.2832,p=proj(Math.sin(a)*R*.14*pul,Math.cos(a)*R*.14*pul,0);i?c.lineTo(p.x,p.y):c.moveTo(p.x,p.y)}c.strokeStyle=COL.accent;c.globalAlpha=1-pul;c.lineWidth=2;c.stroke();c.globalAlpha=1;
   c.beginPath();c.moveTo(pu.x,pu.y);c.lineTo(pt.x,pt.y);c.strokeStyle=COL.accent;c.lineWidth=2;c.stroke();
@@ -1277,7 +1388,7 @@ function drawRadar(now,dt){
     const z=d.alt*zs,pp=proj(x,y,z);arr.push({p,x,y,z,pp,d});
   }
   arr.sort((a,b)=>b.pp.depth-a.pp.depth);
-  const labels=ST.list.slice(0,7).map(p=>p.hex),taken=[];
+  const labels=(cmpLive?inView():ST.list).slice(0,7).map(p=>p.hex),taken=[];
   for(const o of arr){
     const {p,x,y,z,pp}=o,k=kindOf(p),age=clamp((now-p.born)/700,0,1),sc=(age<1?(age*age*(3-2*age)):1)*(KSCALE[k]||1);
     const sel=ST.sel===p.hex,col=altColor(o.d.alt,1),th=(p.track||0)*RAD,fx=Math.sin(th),fy=Math.cos(th);
@@ -1290,6 +1401,7 @@ function drawRadar(now,dt){
     c.beginPath();pts.forEach(([lx,ly],i)=>{const wx=x+(lx*fy+(-ly)*fx)*unit,wy=y+((-lx)*fx+(-ly)*fy)*unit,q=proj(wx,wy,z);i?c.lineTo(q.x,q.y):c.moveTo(q.x,q.y)});c.closePath();
     c.fillStyle=col;c.fill();c.lineWidth=1.3;c.strokeStyle=sel?'#fff':'rgba(0,0,0,.55)';c.stroke();
     if(k==='heli'){const a=now/60;for(let r=0;r<2;r++){const ang=a+r*1.5708,q1=proj(x+Math.sin(ang)*9*unit,y+Math.cos(ang)*9*unit,z),q2=proj(x-Math.sin(ang)*9*unit,y-Math.cos(ang)*9*unit,z);c.beginPath();c.moveTo(q1.x,q1.y);c.lineTo(q2.x,q2.y);c.strokeStyle=col;c.globalAlpha=.8;c.lineWidth=1.5;c.stroke();c.globalAlpha=1}}
+    if(cmpLive&&!sel&&!p.onGround&&Math.abs(angd((Math.atan2(x,y)/RAD+360)%360,CMP.disp))<=S.fov/2){c.beginPath();c.arc(pp.x,pp.y,14,0,6.283);c.strokeStyle=COL.accent;c.lineWidth=1.8;c.globalAlpha=.85;c.stroke();c.globalAlpha=1}
     if(p.emerg||p.squawk==='7700'){c.beginPath();c.arc(pp.x,pp.y,16+4*Math.sin(now/120),0,6.283);c.strokeStyle='#ff2d55';c.lineWidth=2.5;c.stroke()}
     if(sel){const rr=20+3*Math.sin(now/220);c.beginPath();c.arc(pp.x,pp.y,rr,0,6.283);c.strokeStyle=COL.accent;c.lineWidth=2.5;c.stroke();c.beginPath();c.arc(pp.x,pp.y,rr+7+((now/12)%14),0,6.283);c.globalAlpha=.5-((now/12)%14)/28;c.stroke();c.globalAlpha=1}
     const lx=pp.x,ly=pp.y-(sel?27:17),lw=(p.callsign||p.reg||'').length*6.4+8;
@@ -1306,7 +1418,7 @@ function drawRadar(now,dt){
   cv.addEventListener('pointerdown',e=>{Snd.unlock();cv.setPointerCapture(e.pointerId);RV.pr.set(e.pointerId,{x:e.offsetX,y:e.offsetY});RV.lastTouch=performance.now();
     if(RV.pr.size===1)RV.downAt={x:e.offsetX,y:e.offsetY,t:performance.now(),moved:0};if(RV.pr.size===2){RV.pinch0={d:dist2(),z:RV.zoom};RV.downAt=null}});
   cv.addEventListener('pointermove',e=>{const p=RV.pr.get(e.pointerId);if(!p)return;const nx=e.offsetX,ny=e.offsetY,dx=nx-p.x,dy=ny-p.y;p.x=nx;p.y=ny;RV.lastTouch=performance.now();
-    if(RV.pr.size===1){RV.yaw-=dx*.009;RV.pitch=clamp(RV.pitch+dy*.005,.18,1.5);if(RV.downAt)RV.downAt.moved+=Math.abs(dx)+Math.abs(dy)}
+    if(RV.pr.size===1){if(!CMP.live())RV.yaw-=dx*.009;RV.pitch=clamp(RV.pitch+dy*.005,.18,1.5);if(RV.downAt)RV.downAt.moved+=Math.abs(dx)+Math.abs(dy)}
     else if(RV.pr.size===2&&RV.pinch0){RV.zoom=clamp(RV.pinch0.z*dist2()/RV.pinch0.d,.35,3.5)}});
   const up=e=>{RV.pr.delete(e.pointerId);RV.lastTouch=performance.now();
     if(RV.downAt&&RV.pr.size===0&&RV.downAt.moved<10&&performance.now()-RV.downAt.t<500){tapRadar(RV.downAt.x,RV.downAt.y)}
@@ -1368,7 +1480,8 @@ document.addEventListener('click',e=>{
     case 'wxChip':toggleWx();return;
     case 'sndBtn':S.sound=!S.sound;save();updateSndIcon();if(S.sound){Snd.unlock();Snd.chime()}toast(S.sound?'🔊 Sound on':'🔇 Sound off',1800);return;
     case 'orbitBtn':S.orbit=!S.orbit;RV.auto=S.orbit;save();t.classList.toggle('on',S.orbit);Snd.tick();return;
-    case 'northBtn':RV.yaw=0;RV.auto=false;S.orbit=false;$('#orbitBtn').classList.remove('on');Snd.tick();return;
+    case 'compassBtn':if(CMP.on)CMP.stop();else CMP.start();return;
+    case 'northBtn':CMP.stop(true);RV.yaw=0;RV.auto=false;S.orbit=false;$('#orbitBtn').classList.remove('on');Snd.tick();return;
     case 'tiltBtn':RV.pitch=RV.pitch>1.1?.5:RV.pitch>.7?1.35:.9;RV.zoom=1;Snd.tick();return;
     case 'closeX':closeSheet();return;
   }
@@ -1392,7 +1505,8 @@ document.addEventListener('change',e=>{
   if(t.id==='srcSel'){S.source=t.value;save();ST.cool={};Demo.planes=null;refresh(true)}
   if(t.id==='proxyIn'){S.proxy=t.value.trim().replace(/\/+$/,'');save();ST.cool={};ST.route={};LS.set('fleyet.route',ST.route);toast(S.proxy?'Proxy saved ✅':'Proxy removed',1800)}
 });
-document.addEventListener('input',e=>{if(e.target.id==='vol'){S.vol=+e.target.value;save();Snd.vol();clearTimeout(Snd.vt);Snd.vt=setTimeout(()=>{Snd.unlock();Snd.tick()},120)}});
+document.addEventListener('input',e=>{if(e.target.id==='topPad'){S.topPad=+e.target.value;save();applyTopPad();const v=$('#topPadVal');if(v)v.textContent=S.topPad+'px'}
+  if(e.target.id==='vol'){S.vol=+e.target.value;save();Snd.vol();clearTimeout(Snd.vt);Snd.vt=setTimeout(()=>{Snd.unlock();Snd.tick()},120)}});
 $('#backdrop').addEventListener('click',()=>{if(performance.now()-(ST.openedAt||0)<500)return;closeSheet()});
 (function(){const g=$('#grab'),sh=$('#sheet');let y0=null;
   g.addEventListener('pointerdown',e=>{y0=e.clientY;g.setPointerCapture(e.pointerId);sh.style.transition='none'});
@@ -1434,14 +1548,15 @@ try{if(screen.orientation&&screen.orientation.lock)screen.orientation.lock('port
 /* ════════════════════════════════════════════════
    MAIN LOOP
 ════════════════════════════════════════════════ */
-let last=performance.now(),liveT=0;
+let last=performance.now(),liveT=0,hudT=0;
 function loop(t){
   const dt=Math.min(.1,(t-last)/1000);last=t;
   if(!document.hidden){
-    FX.frame(t,dt);
+    FX.frame(t,dt);CMP.step(dt);
     if(ST.view==='radar'&&ST.user)drawRadar(Date.now(),dt);
     else if(ST.view==='radar'){RV.cx.setTransform(RV.d,0,0,RV.d,0,0);RV.cx.clearRect(0,0,RV.w,RV.h)}
     if(sheetOpen){const tn=$('#turn');if(tn){if(!turnDrag)turnRZ+=dt*28;tn.style.setProperty('--rz',turnRZ+'deg')}}
+    hudT+=dt;if(hudT>.12){hudT=0;if(CMP.on){updateHud();if(sheetOpen)updateLook()}}
     liveT+=dt;if(liveT>1){liveT=0;if(sheetOpen)renderSheetLive();if(ST.view==='list')patchRows();if(ST.view==='radar')patchCards();renderStatus();renderCount();if(WX.open)renderWx()}
   }
   requestAnimationFrame(loop);
@@ -1460,7 +1575,7 @@ function boot(){
   $('#app').insertAdjacentHTML('afterbegin',WX_DEFS);
   $('#markPath').setAttribute('d',gPath('jet'));$$('.splashPath').forEach(p=>p.setAttribute('d',gPath('jet')));
   readColors();FX.init();buildTabs();renderThemes();updateSndIcon();
-  WX.restore();if(WX.d)FX.cover=WX.cover();
+  applyTopPad();WX.restore();if(WX.d)FX.cover=WX.cover();
   applyTheme(S.theme);
   RV.auto=S.orbit;$('#orbitBtn').classList.toggle('on',S.orbit);
   layout();sizeRadar();
@@ -1471,7 +1586,7 @@ function boot(){
   requestAnimationFrame(loop);setInterval(tickUI,250);
   if('serviceWorker' in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
 }
-window.__fleyet={ST,S,RV,WX,FX,Photo,refresh,setView,openSheet,applyTheme,THEMES,Snd,layout,renderWx};
+window.__fleyet={ST,S,RV,WX,FX,CMP,Photo,refresh,setView,openSheet,applyTheme,THEMES,Snd,layout,renderWx};
 boot();
 })();
 </script>
